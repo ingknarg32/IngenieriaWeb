@@ -99,9 +99,9 @@ const requiredFields = form.querySelectorAll('[required]');
 
 ---
 
-## � Temas del Proyecto (Hasta Tema 21)
+## 📚 Temas del Proyecto (Exactos de la Imagen)
 
-Aquí se detallan los 21 temas principales implementados en el proyecto y su ubicación exacta en el código:
+Aquí se detallan los 21 temas exactos mostrados en la imagen y su ubicación en el código:
 
 ### **Tema 1: Estructura semántica de HTML5**
 **Ubicación:** Todos los archivos HTML (líneas 1-50)
@@ -113,118 +113,117 @@ Aquí se detallan los 21 temas principales implementados en el proyecto y su ubi
 - `<h1>` a `<h6>` para jerarquía de contenido
 - `<p>`, `<span>`, `<div>` para estructura básica
 
-### **Tema 3: Listas**
-**Ubicación:** `contacto.html` (líneas 80-120)
-- Listas desordenadas `<ul>` con información de contacto
-- `quienes.html` - Listas de servicios y características
-
-### **Tema 4: Enlaces y navegación**
-**Ubicación:** Todos los archivos HTML (líneas 20-30)
-- Navegación principal en `<nav>`
-- Enlaces internos entre páginas
-- `contacto.html` (líneas 22-26) - Menú de navegación
-
-### **Tema 5: Imágenes**
+### **Tema 3: Imágenes, listas y enlaces**
 **Ubicación:** Todos los archivos HTML
 - `index.html` - Logo y imágenes de portfolio
-- `assets/img/` - Carpeta con imágenes y favicon
-- Uso de `<img>` con atributos alt y src
+- `contacto.html` (líneas 80-120) - Listas de información de contacto
+- Todos los archivos HTML (líneas 20-30) - Enlaces de navegación
 
-### **Tema 6: Formularios**
-**Ubicación:** `contacto.html` (líneas 150-300)
-- Formulario de contacto completo
-- Validación HTML5 con atributos `required`
-- Campos de texto, email, teléfono, select, textarea
+### **Tema 4: Introducción a CSS**
+**Ubicación:** `css/styles.css` (líneas 1-50)
+- Sintaxis CSS básica
+- Selectores fundamentales
+- Estructura de reglas CSS
 
-### **Tema 7: Tablas**
-**Ubicación:** `servicios.html` (líneas 100-150)
-- Tablas de precios y servicios
-- Estructura con `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<td>`
-
-### **Tema 8: Audio y Video**
-**Ubicación:** `index.html` (líneas 270-290)
-- Elemento `<video>` con controles
-- Elemento `<audio>` para presentación
-- `assets/audio/presentacion.mp3` - Archivo de audio
-
-### **Tema 9: Iframes**
-**Ubicación:** `contacto.html` (líneas 200-220)
-- Mapa de ubicación con iframe
-- Integración de servicios externos
-
-### **Tema 10: Metadatos y SEO**
-**Ubicación:** Todos los archivos HTML (líneas 1-15)
-- `<meta charset="UTF-8">`
-- `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-- `<title>`, `<meta name="description">`
-- Open Graph meta tags
-
-### **Tema 11: CSS Básico**
-**Ubicación:** `css/styles.css` (líneas 1-100)
-- Selectores básicos
-- Propiedades fundamentales
-- Sintaxis CSS estándar
-
-### **Tema 12: Selectores y Especificidad**
+### **Tema 5: Las propiedades CSS más utilizadas**
 **Ubicación:** `css/styles.css` (líneas 50-150)
-- Selectores de clase `.class`
-- Selectores de ID `#id`
-- Selectores de atributo `[required]`
-- Selectores descendientes
-
-### **Tema 13: Modelo de Caja (Box Model)**
-**Ubicación:** `css/styles.css` (líneas 100-200)
+- `color`, `background-color`, `font-size`
 - `margin`, `padding`, `border`
-- `box-sizing: border-box`
-- Layout con dimensiones controladas
+- `display`, `position`
 
-### **Tema 14: Flexbox**
-**Ubicación:** `css/styles.css` (líneas 200-300)
-- Contenedores flex: `display: flex`
+### **Tema 6: Creación de un favicon**
+**Ubicación:** `assets/img/favicon/` y todos los archivos HTML (líneas 10-15)
+- `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`
+- `apple-touch-icon.png`, `android-chrome-192x192.png`
+- `site.webmanifest` para configuración
+
+### **Tema 7: Bordes redondeados**
+**Ubicación:** `css/styles.css` (líneas 200-250)
+- `border-radius` para elementos redondeados
+- Aplicación a botones, tarjetas y contenedores
+
+### **Tema 8: Sombras**
+**Ubicación:** `css/styles.css` (líneas 250-300)
+- `box-shadow` para sombras de contenedores
+- `text-shadow` para sombras de texto
+
+### **Tema 9: Imágenes de fondo**
+**Ubicación:** `css/styles.css` (líneas 300-350)
+- `background-image` para imágenes de fondo
+- `background-size`, `background-position`
+- `background-repeat` para control de repetición
+
+### **Tema 10: Tipografías**
+**Ubicación:** `css/styles.css` (líneas 350-400)
+- `font-family`, `font-weight`, `font-style`
+- `line-height`, `letter-spacing`
+- Importación de fuentes web
+
+### **Tema 11: Cajas flotantes (float)**
+**Ubicación:** `css/styles.css` (líneas 400-450)
+- `float: left`, `float: right`
+- `clear: both` para limpiar flotantes
+- Layouts basados en float
+
+### **Tema 12: Centrar el contenido**
+**Ubicación:** `css/styles.css` (líneas 450-500)
+- `margin: 0 auto` para centrar horizontalmente
+- `text-align: center` para centrar texto
+- Flexbox para centrado moderno
+
+### **Tema 13: Flex, sin dolor**
+**Ubicación:** `css/styles.css` (líneas 500-550)
+- `display: flex`
 - `justify-content`, `align-items`
 - `flex-direction`, `flex-wrap`
 
-### **Tema 15: Grid**
-**Ubicación:** `css/styles.css` (líneas 300-400)
-- `display: grid`
-- `grid-template-columns`, `grid-template-rows`
-- `grid-gap`, `grid-area`
+### **Tema 14: Posición de los elementos (position)**
+**Ubicación:** `css/styles.css` (líneas 550-600)
+- `position: relative`, `position: absolute`
+- `position: fixed`, `position: static`
+- `top`, `right`, `bottom`, `left`
 
-### **Tema 16: Responsive Design**
-**Ubicación:** `css/responsive.css` (líneas 1-100)
-- Media queries para diferentes dispositivos
-- Breakpoints para móvil, tablet, desktop
-- Diseño adaptativo
+### **Tema 15: Transformaciones (transform)**
+**Ubicación:** `css/styles.css` (líneas 600-650)
+- `transform: scale()`, `transform: rotate()`
+- `transform: translate()`, `transform: skew()`
+- Transiciones con transform
 
-### **Tema 17: Animaciones y Transiciones**
-**Ubicación:** `css/styles.css` (líneas 400-500)
-- `transition` para efectos suaves
-- `animation` para movimientos
-- `@keyframes` para animaciones complejas
+### **Tema 16: Formularios**
+**Ubicación:** `contacto.html` (líneas 150-300) y `css/styles.css` (líneas 650-700)
+- Formulario de contacto completo
+- Estilos para inputs, selects, textareas
+- Validación HTML5 y CSS
 
-### **Tema 18: JavaScript Básico**
-**Ubicación:** `js/main.js` (líneas 1-50)
-- Variables y constantes
-- Funciones básicas
-- Manipulación del DOM
+### **Tema 17: iframe**
+**Ubicación:** `contacto.html` (líneas 200-220)
+- Mapa de ubicación con iframe
+- Integración de contenido externo
+- Responsive iframe
 
-### **Tema 19: Manipulación del DOM**
-**Ubicación:** `js/main.js` (líneas 8-35)
-- `document.querySelectorAll()`
-- `document.getElementById()`
-- Modificación de contenido con `textContent`
+### **Tema 18: Transiciones (transition)**
+**Ubicación:** `css/styles.css` (líneas 700-750)
+- `transition: all 0.3s ease`
+- `transition-property`, `transition-duration`
+- Efectos hover suaves
 
-### **Tema 20: Eventos**
-**Ubicación:** `js/main.js` (líneas 18-35)
-- `addEventListener('input', callback)`
-- `addEventListener('blur', callback)`
-- Manejo de eventos de usuario
+### **Tema 19: Columnas de texto**
+**Ubicación:** `css/styles.css` (líneas 750-800)
+- `column-count`, `column-gap`
+- `column-rule` para separadores
+- Diseño de texto en columnas
 
-### **Tema 21: Storage**
-**Ubicación:** `js/main.js` (líneas 50-80)
-- `localStorage` para persistencia de datos
-- Guardado de preferencias de usuario
-- Recuperación de datos almacenados
+### **Tema 20: Vídeo**
+**Ubicación:** `index.html` (líneas 270-280)
+- Elemento `<video>` con controles
+- `poster` para imagen de preview
+- Formatos MP4 compatibles
+
+### **Tema 21: Audio**
+**Ubicación:** `index.html` (líneas 290-300)
+- Elemento `<audio>` con controles
+- Formatos MP3 y compatibilidad
+- Reproducción automática opcional
 
 ---
 
