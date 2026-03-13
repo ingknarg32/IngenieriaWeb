@@ -1,0 +1,714 @@
+/* ============================================================
+   SOLUCIÓN CRAFT — Design System
+   Paleta: Blanco, Negro y Escala de Grises (estilo cartoon)
+   Temas 1–23 cubiertos
+   ============================================================ */
+
+/* ===== TEMA 10: TIPOGRAFÍAS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ===== TEMA 4+5: CSS VARIABLES / PROPIEDADES UTILIZADAS ===== */
+:root {
+  --black:      #0d0d0d;
+  --gray-900:   #1a1a1a;
+  --gray-800:   #2e2e2e;
+  --gray-700:   #444444;
+  --gray-600:   #5c5c5c;
+  --gray-500:   #7a7a7a;
+  --gray-400:   #a0a0a0;
+  --gray-300:   #c4c4c4;
+  --gray-200:   #dcdcdc;
+  --gray-100:   #f0f0f0;
+  --white:      #fafafa;
+  --border-cartoon: 3px solid #0d0d0d;
+  --border-thick:   4px solid #0d0d0d;
+  --shadow-cartoon: 5px 5px 0px #0d0d0d;
+  --shadow-hover:   8px 8px 0px #0d0d0d;
+  --shadow-pressed: 2px 2px 0px #0d0d0d;
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-body:    'Nunito', 'Segoe UI', sans-serif;
+  --font-mono:    'Space Mono', 'Courier New', monospace;
+  --sp-xs: 0.5rem;
+  --sp-sm: 1rem;
+  --sp-md: 1.5rem;
+  --sp-lg: 2.5rem;
+  --sp-xl: 4rem;
+  --sp-2xl: 6rem;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 40px;
+  --transition: 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  --max-w: 1140px;
+}
+
+/* RESET */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--white);
+  color:var(--black);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--gray-100);}
+::-webkit-scrollbar-thumb{background:var(--black);border-radius:4px;}
+
+/* TEMA 12: CENTRAR CONTENIDO */
+.container{
+  max-width:var(--max-w);
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem,5vw,2.5rem);
+}
+
+/* =====================================================
+   HEADER — TEMA 1+2: ESTRUCTURA SEMÁNTICA / ETIQUETAS
+   ===================================================== */
+.main-header{
+  background:var(--white);
+  border-bottom:var(--border-thick);
+  padding:1rem clamp(1.25rem,5vw,2.5rem);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--sp-sm);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  /* TEMA 8: SOMBRAS */
+  box-shadow:0 4px 0 var(--black);
+}
+.header-brand{display:flex;align-items:center;gap:var(--sp-sm);text-decoration:none;color:inherit;}
+
+/* TEMA 3: IMÁGENES */
+.logo{
+  width:52px;height:52px;
+  object-fit:cover;
+  border-radius:50%;
+  border:var(--border-cartoon);
+  /* TEMA 8: SOMBRA */
+  box-shadow:3px 3px 0 var(--black);
+  /* TEMA 5: filtro */
+  filter:grayscale(100%) contrast(1.1);
+  /* TEMA 18: TRANSICIÓN */
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+.logo:hover{transform:rotate(-5deg) scale(1.08);box-shadow:var(--shadow-hover);}
+.main-header h1{
+  font-family:var(--font-display);
+  font-size:clamp(1.8rem,4vw,2.4rem);
+  letter-spacing:0.04em;line-height:1;
+}
+.header-tagline{
+  font-family:var(--font-mono);font-size:0.68rem;
+  color:var(--gray-500);letter-spacing:0.1em;text-transform:uppercase;
+}
+
+/* =====================================================
+   NAV — TEMA 13: FLEX
+   ===================================================== */
+nav{
+  background:var(--black);
+  padding:0 clamp(1.25rem,5vw,2.5rem);
+  /* TEMA 13 */
+  display:flex;align-items:center;
+  border-bottom:var(--border-thick);
+  position:sticky;top:0;z-index:999;
+}
+nav a{
+  color:var(--white);
+  font-family:var(--font-body);font-weight:700;
+  font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;
+  text-decoration:none;
+  padding:1rem 1.4rem;
+  position:relative;
+  border-right:2px solid var(--gray-800);
+  /* TEMA 18: TRANSICIÓN */
+  transition:background var(--transition),color var(--transition);
+}
+nav a:first-child{border-left:2px solid var(--gray-800);}
+nav a::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:100%;height:3px;background:var(--white);
+  transform:scaleX(0);
+  transition:transform 0.25s ease;transform-origin:left;
+}
+nav a:hover{background:var(--gray-800);}
+nav a:hover::after{transform:scaleX(1);}
+nav a.active{background:var(--white);color:var(--black);}
+nav a.active::after{transform:scaleX(1);background:var(--black);}
+
+/* =====================================================
+   HERO — TEMA 9: IMÁGENES DE FONDO, TEMA 22: DEGRADADOS
+   ===================================================== */
+.hero-section{
+  /* TEMA 9: fondo con patrón */
+  background-color:var(--black);
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,0.04) 39px,rgba(255,255,255,0.04) 40px),
+    repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,0.04) 39px,rgba(255,255,255,0.04) 40px);
+  color:var(--white);
+  padding:var(--sp-2xl) 0;
+  border-bottom:var(--border-thick);
+  position:relative;overflow:hidden;
+}
+/* TEMA 22: degradado decorativo */
+.hero-section::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:320px;height:320px;
+  background:radial-gradient(circle,var(--gray-800) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.hero-inner{display:flex;align-items:center;gap:var(--sp-xl);}
+.hero-text{flex:1;}
+.hero-badge{
+  display:inline-block;
+  font-family:var(--font-mono);font-size:0.65rem;
+  letter-spacing:0.18em;text-transform:uppercase;
+  padding:5px 14px;
+  border:2px solid var(--gray-400);
+  border-radius:var(--radius-xl);color:var(--gray-400);
+  margin-bottom:var(--sp-md);
+}
+.hero-section h2{
+  font-family:var(--font-display);
+  font-size:clamp(3rem,8vw,6rem);
+  line-height:0.95;letter-spacing:0.02em;
+  margin-bottom:var(--sp-md);
+  /* TEMA 23: ANIMACIÓN */
+  animation:heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) both;
+}
+.hero-section h2 em{font-style:italic;color:var(--gray-400);}
+.hero-section p.lead{
+  font-size:1.1rem;color:var(--gray-300);
+  max-width:480px;margin-bottom:var(--sp-lg);
+  animation:heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--white);color:var(--black);
+  font-weight:800;font-size:0.9rem;text-transform:uppercase;
+  letter-spacing:0.1em;text-decoration:none;
+  padding:0.85rem 2rem;
+  border:var(--border-thick);border-radius:var(--radius-sm);
+  /* TEMA 8 */
+  box-shadow:var(--shadow-cartoon);
+  /* TEMA 18 */
+  transition:transform var(--transition),box-shadow var(--transition);
+  animation:heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s both;
+}
+.hero-cta:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-hover);}
+.hero-cta:active{transform:translate(2px,2px);box-shadow:var(--shadow-pressed);}
+.hero-stats{
+  display:flex;flex-direction:column;gap:var(--sp-sm);
+  animation:heroSlideUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.45s both;
+}
+.stat-card{
+  background:var(--gray-900);border:var(--border-cartoon);
+  border-radius:var(--radius-md);
+  padding:var(--sp-md) var(--sp-lg);text-align:center;
+  /* TEMA 8 */
+  box-shadow:var(--shadow-cartoon);min-width:160px;
+  /* TEMA 18 */
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+.stat-card:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-hover);}
+.stat-card .num{font-family:var(--font-display);font-size:2.8rem;color:var(--white);line-height:1;}
+.stat-card .lbl{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-400);margin-top:4px;}
+
+/* SECCIÓN: encabezados genéricos */
+.section-label{
+  font-family:var(--font-mono);font-size:0.65rem;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gray-500);
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:var(--sp-sm);
+}
+.section-label::before{content:'';display:block;width:28px;height:2px;background:var(--black);}
+.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,5vw,3.4rem);
+  line-height:1;letter-spacing:0.02em;margin-bottom:var(--sp-lg);
+}
+
+/* =====================================================
+   TICKER — TEMA 23: ANIMACIÓN CONTINUA
+   ===================================================== */
+.ticker{
+  background:var(--black);
+  border-top:var(--border-thick);border-bottom:var(--border-thick);
+  padding:0.75rem 0;overflow:hidden;white-space:nowrap;
+}
+.ticker-inner{
+  display:inline-flex;gap:var(--sp-xl);
+  /* TEMA 23: animación */
+  animation:marquee 22s linear infinite;
+}
+.ticker-item{
+  font-family:var(--font-mono);font-size:0.75rem;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--white);display:flex;align-items:center;gap:var(--sp-sm);
+}
+.ticker-item::before{content:'◆';color:var(--gray-500);}
+
+/* =====================================================
+   FEATURES / CARDS — TEMA 3: LISTAS, TEMA 7: BORDES,
+   TEMA 8: SOMBRAS, TEMA 13: FLEX
+   ===================================================== */
+.features-section{
+  padding:var(--sp-2xl) 0;
+  border-bottom:var(--border-thick);
+  background:var(--white);
+}
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:var(--sp-md);
+}
+/* TEMA 7 */
+article.card{
+  background:var(--white);
+  border:var(--border-cartoon);
+  border-radius:var(--radius-md);
+  padding:var(--sp-lg);
+  position:relative;overflow:hidden;
+  /* TEMA 8 */
+  box-shadow:var(--shadow-cartoon);
+  /* TEMA 18 */
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+article.card:hover{transform:translate(-4px,-4px);box-shadow:var(--shadow-hover);}
+article.card::before{
+  content:'';position:absolute;top:0;right:0;
+  width:50px;height:50px;background:var(--black);
+  clip-path:polygon(100% 0,0 0,100% 100%);
+}
+article.card .card-icon{
+  font-size:2rem;margin-bottom:var(--sp-sm);display:block;
+  /* TEMA 18 */
+  transition:transform var(--transition);
+}
+article.card:hover .card-icon{transform:scale(1.2) rotate(-5deg);}
+article.card h3{
+  font-family:var(--font-display);
+  font-size:1.5rem;letter-spacing:0.03em;
+  margin-bottom:var(--sp-sm);
+}
+article.card p{color:var(--gray-700);font-size:0.95rem;}
+/* TEMA 3: LISTAS */
+article.card ul,article.card ol{
+  padding-left:1.2rem;margin-top:var(--sp-sm);
+  color:var(--gray-700);font-size:0.93rem;
+}
+article.card li{
+  margin-bottom:6px;
+  transition:transform var(--transition);
+}
+article.card li:hover{transform:translateX(5px);}
+ul li::marker{color:var(--black);font-weight:900;}
+ol li::marker{color:var(--black);font-weight:900;font-family:var(--font-mono);}
+
+/* =====================================================
+   TEMA 19: COLUMNAS DE TEXTO
+   ===================================================== */
+.columns-section{
+  padding:var(--sp-2xl) 0;
+  border-bottom:var(--border-thick);
+  background:var(--gray-100);
+}
+.columns-intro{
+  font-size:1rem;color:var(--gray-700);
+  /* TEMA 19 */
+  column-count:3;
+  column-gap:var(--sp-lg);
+  column-rule:2px solid var(--gray-300);
+  text-align:justify;hyphens:auto;
+}
+.columns-intro p{break-inside:avoid;margin-bottom:var(--sp-sm);}
+.columns-intro strong{color:var(--black);}
+
+/* =====================================================
+   PARALLAX — TEMA 9: BG ATTACHMENT, TEMA 22: DEGRADADOS
+   ===================================================== */
+.parallax-strip{
+  /* TEMA 9: background-attachment */
+  background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1400&q=80');
+  background-attachment:fixed;
+  background-size:cover;background-position:center;
+  /* TEMA 5: filtro escala de grises */
+  filter:grayscale(100%);
+  min-height:300px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  border-top:var(--border-thick);border-bottom:var(--border-thick);
+  position:relative;overflow:hidden;
+}
+.parallax-strip::before{
+  content:'';position:absolute;inset:0;
+  /* TEMA 22: degradado con transparencia */
+  background:linear-gradient(135deg,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.45) 50%,rgba(0,0,0,0.8) 100%);
+  filter:none;
+}
+.parallax-content{position:relative;z-index:1;color:var(--white);}
+.parallax-content blockquote{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,5vw,3.5rem);
+  line-height:1.05;max-width:800px;margin-inline:auto;
+}
+.parallax-content cite{
+  display:block;font-family:var(--font-mono);font-size:0.75rem;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-300);
+  margin-top:var(--sp-sm);font-style:normal;
+}
+
+/* =====================================================
+   MULTIMEDIA — TEMA 20: VÍDEO, TEMA 21: AUDIO,
+   TEMA 17: IFRAME, TEMA 3: IMÁGENES/FIGURAS
+   ===================================================== */
+.multimedia-section{
+  padding:var(--sp-2xl) 0;
+  border-bottom:var(--border-thick);
+  background:var(--white);
+}
+.media-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:var(--sp-md);margin-top:var(--sp-lg);
+}
+.media-card{
+  border:var(--border-cartoon);border-radius:var(--radius-md);
+  overflow:hidden;
+  /* TEMA 8 */
+  box-shadow:var(--shadow-cartoon);
+  /* TEMA 18 */
+  transition:transform var(--transition),box-shadow var(--transition);
+  background:var(--gray-100);
+}
+.media-card:hover{transform:translate(-4px,-4px);box-shadow:var(--shadow-hover);}
+.media-header{
+  background:var(--black);color:var(--white);
+  padding:0.65rem var(--sp-sm);
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:0.72rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  border-bottom:var(--border-cartoon);
+}
+.media-header .dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--white);}
+.media-body{padding:var(--sp-sm);}
+
+/* TEMA 20: VIDEO */
+video{
+  width:100%;display:block;
+  border-radius:var(--radius-sm);
+  /* TEMA 5: filtro B&W */
+  filter:grayscale(100%) contrast(1.05);
+  border:2px solid var(--gray-300);
+  /* TEMA 18 */
+  transition:filter 0.4s ease;
+}
+video:hover{filter:grayscale(0%);}
+
+/* TEMA 21: AUDIO */
+.audio-visual{
+  background:var(--black);border-radius:var(--radius-sm);
+  padding:var(--sp-md);text-align:center;
+  margin-bottom:var(--sp-sm);border:2px solid var(--gray-700);
+}
+.waveform{display:flex;align-items:center;justify-content:center;gap:3px;height:48px;}
+.waveform span{
+  display:block;width:4px;background:var(--white);border-radius:2px;
+  /* TEMA 23: ANIMACIÓN */
+  animation:waveBar 1.2s ease-in-out infinite alternate;
+}
+.waveform span:nth-child(1){height:20%;animation-delay:0.0s;}
+.waveform span:nth-child(2){height:45%;animation-delay:0.1s;}
+.waveform span:nth-child(3){height:70%;animation-delay:0.2s;}
+.waveform span:nth-child(4){height:90%;animation-delay:0.3s;}
+.waveform span:nth-child(5){height:60%;animation-delay:0.4s;}
+.waveform span:nth-child(6){height:80%;animation-delay:0.5s;}
+.waveform span:nth-child(7){height:50%;animation-delay:0.35s;}
+.waveform span:nth-child(8){height:75%;animation-delay:0.25s;}
+.waveform span:nth-child(9){height:40%;animation-delay:0.15s;}
+.waveform span:nth-child(10){height:25%;animation-delay:0.05s;}
+audio{width:100%;display:block;margin-top:var(--sp-xs);filter:grayscale(1);}
+
+/* TEMA 17: IFRAME */
+.iframe-wrapper{
+  position:relative;padding-bottom:56.25%;height:0;overflow:hidden;
+  border-radius:var(--radius-sm);border:2px solid var(--gray-300);
+}
+.iframe-wrapper iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:0;
+  /* TEMA 5: filtro */
+  filter:grayscale(100%);
+  /* TEMA 18 */
+  transition:filter 0.4s ease;
+}
+.iframe-wrapper:hover iframe{filter:grayscale(0%);}
+
+/* TEMA 3: figure/figcaption */
+figure{margin:0;position:relative;}
+figcaption{
+  font-family:var(--font-mono);font-size:0.72rem;
+  color:var(--gray-500);padding:6px var(--sp-sm);
+  letter-spacing:0.05em;border-top:1px solid var(--gray-200);
+}
+
+/* Galería */
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-sm);margin-top:var(--sp-md);
+}
+.gallery-item{
+  position:relative;overflow:hidden;
+  border:var(--border-cartoon);border-radius:var(--radius-sm);
+  /* TEMA 8 */
+  box-shadow:var(--shadow-cartoon);
+  aspect-ratio:4/3;background:var(--gray-200);
+}
+.gallery-item img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  /* TEMA 5 */
+  filter:grayscale(100%) contrast(1.1);
+  /* TEMA 15+18 */
+  transition:transform 0.4s var(--transition),filter 0.4s ease;
+}
+.gallery-item:hover img{
+  /* TEMA 15: TRANSFORM */
+  transform:scale(1.1);filter:grayscale(30%) contrast(1.1);
+}
+.gallery-overlay{
+  position:absolute;inset:0;
+  /* TEMA 22: transparencia */
+  background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 60%);
+  opacity:0;
+  transition:opacity 0.3s ease;
+  display:flex;align-items:flex-end;padding:var(--sp-sm);
+}
+.gallery-item:hover .gallery-overlay{opacity:1;}
+.gallery-overlay span{color:var(--white);font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.08em;}
+
+/* =====================================================
+   TEMA 16: FORMULARIOS
+   ===================================================== */
+.contact-form-section{
+  padding:var(--sp-2xl) 0;
+  border-bottom:var(--border-thick);
+  background:var(--gray-100);
+}
+.form-layout{
+  display:grid;grid-template-columns:1fr 1.2fr;
+  gap:var(--sp-xl);align-items:start;
+}
+.form-info h3{font-family:var(--font-display);font-size:2rem;margin-bottom:var(--sp-md);}
+.form-info p{color:var(--gray-600);margin-bottom:var(--sp-md);}
+.form-info-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:var(--sp-sm);}
+.form-info-list li{display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--gray-700);}
+.icon-check{
+  width:28px;height:28px;border:var(--border-cartoon);
+  border-radius:var(--radius-sm);background:var(--black);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.75rem;flex-shrink:0;
+}
+/* TEMA 16: form */
+.contact-form{
+  background:var(--white);border:var(--border-thick);
+  border-radius:var(--radius-lg);padding:var(--sp-lg);
+  /* TEMA 8 */
+  box-shadow:var(--shadow-cartoon);
+}
+fieldset{
+  border:var(--border-cartoon);border-radius:var(--radius-md);
+  padding:var(--sp-md);margin-bottom:var(--sp-md);
+  background:var(--gray-100);
+}
+legend{
+  font-family:var(--font-mono);font-weight:700;font-size:0.75rem;
+  letter-spacing:0.12em;text-transform:uppercase;
+  padding:0 8px;color:var(--black);background:var(--white);
+  border:2px solid var(--black);border-radius:var(--radius-sm);
+}
+.form-group{margin-bottom:var(--sp-md);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-sm);}
+label{
+  display:block;font-weight:700;font-size:0.82rem;
+  letter-spacing:0.05em;text-transform:uppercase;
+  color:var(--black);margin-bottom:6px;
+}
+input[type="text"],input[type="email"],input[type="tel"],input[type="date"],
+input[type="time"],input[type="url"],input[type="number"],
+input[type="file"],textarea,select{
+  width:100%;padding:0.75rem 1rem;
+  border:var(--border-cartoon);border-radius:var(--radius-sm);
+  font-family:var(--font-body);font-size:0.95rem;
+  background:var(--white);color:var(--black);
+  /* TEMA 18 */
+  transition:box-shadow var(--transition),transform var(--transition);
+  outline:none;
+}
+input:focus,textarea:focus,select:focus{
+  box-shadow:4px 4px 0 var(--black);transform:translate(-2px,-2px);
+}
+textarea{resize:vertical;min-height:110px;}
+input[type="range"]{
+  -webkit-appearance:none;width:100%;height:6px;
+  border:none;border-radius:3px;
+  background:linear-gradient(to right,var(--black) 0%,var(--black) var(--progress,10%),var(--gray-300) var(--progress,10%),var(--gray-300) 100%);
+  cursor:pointer;padding:0;transform:none;box-shadow:none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:22px;height:22px;
+  background:var(--white);border:var(--border-thick);
+  border-radius:50%;cursor:pointer;
+  transition:transform var(--transition);
+  box-shadow:2px 2px 0 var(--black);
+}
+input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.3);}
+#presupuesto-valor{
+  font-family:var(--font-mono);font-weight:700;
+  color:var(--black);margin-left:8px;font-size:1rem;
+}
+.check-group,.radio-group{display:flex;flex-wrap:wrap;gap:var(--sp-sm);margin-top:8px;}
+.check-item,.radio-item{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:0.9rem;}
+input[type="checkbox"],input[type="radio"]{
+  width:20px;height:20px;border:var(--border-cartoon);
+  border-radius:var(--radius-sm);cursor:pointer;
+  accent-color:var(--black);flex-shrink:0;
+}
+input[type="radio"]{border-radius:50%;}
+.form-actions{display:flex;gap:var(--sp-sm);margin-top:var(--sp-md);}
+.btn-primary,.btn-secondary{
+  padding:0.85rem 2rem;border:var(--border-thick);border-radius:var(--radius-sm);
+  font-family:var(--font-body);font-weight:800;font-size:0.85rem;
+  text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;
+  /* TEMA 8 */
+  box-shadow:var(--shadow-cartoon);
+  /* TEMA 18 */
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+.btn-primary{background:var(--black);color:var(--white);}
+.btn-secondary{background:var(--white);color:var(--black);}
+/* TEMA 15: TRANSFORM */
+.btn-primary:hover,.btn-secondary:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-hover);}
+.btn-primary:active,.btn-secondary:active{transform:translate(2px,2px);box-shadow:var(--shadow-pressed);}
+
+/* =====================================================
+   CTA STRIP — TEMA 22: DEGRADADOS + TRANSPARENCIAS
+   ===================================================== */
+.cta-strip{
+  padding:var(--sp-2xl) 0;
+  /* TEMA 22 */
+  background:linear-gradient(135deg,var(--black) 0%,var(--gray-800) 50%,var(--gray-900) 100%);
+  border-bottom:var(--border-thick);text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-strip::before{
+  content:'';position:absolute;inset:0;
+  /* TEMA 22: transparencia diagonal */
+  background:repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(255,255,255,0.02) 20px,rgba(255,255,255,0.02) 40px);
+  pointer-events:none;
+}
+.cta-strip h2{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,5vw,4rem);color:var(--white);
+  margin-bottom:var(--sp-sm);
+  /* TEMA 23 */
+  animation:pulse 3s ease-in-out infinite;
+}
+.cta-strip p{color:var(--gray-400);margin-bottom:var(--sp-lg);font-size:1.05rem;}
+
+/* =====================================================
+   TEMA 23: ANIMACIONES
+   ===================================================== */
+@keyframes heroSlideUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes waveBar{
+  from{transform:scaleY(0.4);}
+  to{transform:scaleY(1);}
+}
+@keyframes pulse{
+  0%,100%{opacity:1;}50%{opacity:0.75;}
+}
+@keyframes marquee{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes spinIn{
+  from{transform:rotate(-180deg) scale(0);opacity:0;}
+  to{transform:rotate(0deg) scale(1);opacity:1;}
+}
+
+/* Scroll reveal */
+.reveal{
+  opacity:0;transform:translateY(30px);
+  /* TEMA 18 */
+  transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;}
+.reveal-delay-4{transition-delay:0.4s;}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer{
+  background:var(--black);color:var(--white);
+  border-top:var(--border-thick);
+  padding:var(--sp-xl) 0 var(--sp-md);
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:var(--sp-lg);
+  padding-bottom:var(--sp-lg);
+  border-bottom:1px solid var(--gray-800);
+  margin-bottom:var(--sp-md);
+}
+.footer-brand .logo-footer{
+  font-family:var(--font-display);font-size:2.2rem;
+  letter-spacing:0.04em;margin-bottom:var(--sp-sm);
+}
+.footer-brand p{font-size:0.9rem;color:var(--gray-400);max-width:240px;line-height:1.6;}
+.footer-col h4{
+  font-family:var(--font-mono);font-size:0.7rem;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gray-500);margin-bottom:var(--sp-sm);
+}
+/* TEMA 3: ENLACES */
+.footer-col a{
+  display:block;color:var(--gray-300);text-decoration:none;
+  font-size:0.9rem;margin-bottom:8px;
+  /* TEMA 18 */
+  transition:color var(--transition),transform var(--transition);
+}
+.footer-col a:hover{color:var(--white);transform:translateX(4px);}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:var(--sp-sm);
+}
+.footer-bottom p{font-size:0.8rem;color:var(--gray-600);font-family:var(--font-mono);}
+
+/* TEMA 11: FLOAT */
+.float-demo::after{content:'';display:table;clear:both;}
+.float-left{float:left;margin:0 var(--sp-md) var(--sp-sm) 0;}
+.float-right{float:right;margin:0 0 var(--sp-sm) var(--sp-md);}
+
+/* TEMA 6: FAVICON — en HTML head */
+/* TEMA 7: border-radius helpers */
+.rounded-sm{border-radius:var(--radius-sm);}
+.rounded-md{border-radius:var(--radius-md);}
+.rounded-lg{border-radius:var(--radius-lg);}
+.rounded-xl{border-radius:var(--radius-xl);}
+.rounded-full{border-radius:9999px;}
+
+a{color:inherit;}
+img{max-width:100%;height:auto;}

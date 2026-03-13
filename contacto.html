@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Contacta con Solución Craft — inicia tu proyecto digital hoy. Bogotá, Colombia.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Solución Craft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+</head>
+<body>
+
+<header class="main-header">
+  <a href="index.html" class="header-brand">
+    <img src="assets/img/logo.jpeg" alt="Logo Solución Craft" class="logo">
+    <div>
+      <h1>Solución Craft</h1>
+      <p class="header-tagline">Agencia Digital — Bogotá, Colombia</p>
+    </div>
+  </a>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="quienes.html">Quiénes Somos</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="contacto.html" class="active">Contacto</a>
+</nav>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Hablemos de tu proyecto</span>
+    <span class="ticker-item">Respuesta en 24h</span>
+    <span class="ticker-item">Primera consulta gratis</span>
+    <span class="ticker-item">Bogotá, Colombia</span>
+    <span class="ticker-item">Hablemos de tu proyecto</span>
+    <span class="ticker-item">Respuesta en 24h</span>
+    <span class="ticker-item">Primera consulta gratis</span>
+    <span class="ticker-item">Bogotá, Colombia</span>
+  </div>
+</div>
+
+<main>
+
+  <section class="hero-section">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="hero-badge">&#9679; Estamos para ayudarte</span>
+        <h2>Hablemos<br><em>de tu</em><br>Proyecto</h2>
+        <p class="lead">
+          ¿Listo para transformar tu presencia digital? Cuéntanos tu idea y te respondemos
+          con una propuesta personalizada en menos de 24 horas.
+        </p>
+      </div>
+      <aside class="hero-stats">
+        <div class="stat-card"><div class="num">&lt;24h</div><div class="lbl">Respuesta</div></div>
+        <div class="stat-card"><div class="num">0$</div><div class="lbl">Primera consulta</div></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- INFO + FORMULARIO (Tema 16) -->
+  <section class="contact-form-section" id="formulario">
+    <div class="container">
+      <p class="section-label">Escríbenos</p>
+      <div class="form-layout">
+
+        <div class="form-info reveal">
+          <h3>Información de Contacto</h3>
+          <p>Puedes escribirnos por cualquiera de estos medios. También puedes agendar una videollamada.</p>
+          <ul class="form-info-list">
+            <li>
+              <span class="icon-check">&#9993;</span>
+              <div>
+                <strong>Email</strong><br>
+                <a href="mailto:contacto@solucioncraft.com" style="color:var(--gray-600);font-size:0.9rem;">contacto@solucioncraft.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="icon-check">&#128222;</span>
+              <div>
+                <strong>Teléfono / WhatsApp</strong><br>
+                <a href="tel:+573000000000" style="color:var(--gray-600);font-size:0.9rem;">+57 300 000 0000</a>
+              </div>
+            </li>
+            <li>
+              <span class="icon-check">&#128205;</span>
+              <div>
+                <strong>Ubicación</strong><br>
+                <span style="color:var(--gray-600);font-size:0.9rem;">Bogotá, Colombia — Atención presencial con cita previa</span>
+              </div>
+            </li>
+            <li>
+              <span class="icon-check">&#128337;</span>
+              <div>
+                <strong>Horario de atención</strong><br>
+                <span style="color:var(--gray-600);font-size:0.9rem;">Lunes a Viernes, 9:00 am – 6:00 pm COT</span>
+              </div>
+            </li>
+          </ul>
+
+          <!-- IFRAME: Google Maps de Bogotá (Tema 17) -->
+          <div style="margin-top:var(--sp-lg);">
+            <p class="section-label" style="margin-bottom:var(--sp-sm);">Nuestra ubicación</p>
+            <div class="iframe-wrapper" style="border-radius:var(--radius-md);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7836282041286!2d-74.08175!3d4.71099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sco!4v1710000000000"
+                title="Ubicación de Solución Craft en Bogotá, Colombia"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario completo (Tema 16) -->
+        <form class="contact-form reveal reveal-delay-1" action="#" method="post" novalidate>
+          <fieldset>
+            <legend>Datos de Contacto</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="empresa">Empresa / Marca</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Mi Empresa S.A.S.">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" required placeholder="correo@empresa.com" autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="telefono">WhatsApp / Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sitio-web">Sitio web actual</label>
+                <input type="url" id="sitio-web" name="sitio-web" placeholder="https://tuempresa.com">
+              </div>
+              <div class="form-group">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Bogotá, Colombia">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Sobre tu Proyecto</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fecha">Fecha de reunión preferida</label>
+                <input type="date" id="fecha" name="fecha">
+              </div>
+              <div class="form-group">
+                <label for="hora">Hora preferida</label>
+                <input type="time" id="hora" name="hora">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="prioridad">Urgencia del proyecto</label>
+              <select id="prioridad" name="prioridad">
+                <option value="">— Selecciona una opción —</option>
+                <option value="baja">Baja — estoy en fase exploratoria</option>
+                <option value="media" selected>Media — en los próximos 2 meses</option>
+                <option value="alta">Alta — en las próximas semanas</option>
+                <option value="urgente">Urgente — lo necesito ya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="presupuesto">Presupuesto estimado: <span id="presupuesto-valor">$1,000</span></label>
+              <input type="range" id="presupuesto" name="presupuesto" min="100" max="10000" step="100" value="1000">
+            </div>
+            <div class="form-group">
+              <label>Servicios de interés</label>
+              <div class="check-group">
+                <label class="check-item"><input type="checkbox" name="servicios" value="web"> Desarrollo Web</label>
+                <label class="check-item"><input type="checkbox" name="servicios" value="diseno"> Diseño Profesional</label>
+                <label class="check-item"><input type="checkbox" name="servicios" value="seo"> Optimización SEO</label>
+                <label class="check-item"><input type="checkbox" name="servicios" value="marketing"> Marketing Digital</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Tipo de proyecto</label>
+              <div class="radio-group">
+                <label class="radio-item"><input type="radio" name="tipo-proyecto" value="nuevo" checked> Proyecto Nuevo</label>
+                <label class="radio-item"><input type="radio" name="tipo-proyecto" value="actualizacion"> Actualización</label>
+                <label class="radio-item"><input type="radio" name="tipo-proyecto" value="mantenimiento"> Mantenimiento</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Cuéntanos sobre tu proyecto *</label>
+              <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describe tu proyecto: ¿Qué quieres lograr? ¿Quién es tu audiencia? ¿Tienes referencias o inspiración?"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="archivo">Adjuntar brief o referencia (PDF, DOC, imagen)</label>
+              <input type="file" id="archivo" name="archivo" accept=".pdf,.doc,.docx,.jpg,.png,.zip">
+            </div>
+            <input type="hidden" name="timestamp" id="timestamp" value="">
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Enviar mensaje &#8594;</button>
+            <button type="reset" class="btn-secondary">Limpiar</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Redes sociales (Tema 3: enlaces) -->
+  <section class="features-section" style="padding-top:var(--sp-xl);padding-bottom:var(--sp-xl);">
+    <div class="container">
+      <p class="section-label">Síguenos</p>
+      <h2 class="section-title">Redes Sociales</h2>
+      <div class="features-grid">
+        <article class="card reveal">
+          <span class="card-icon">&#128241;</span>
+          <h3>LinkedIn</h3>
+          <p>Contenido profesional, casos de éxito y novedades del sector digital.</p>
+          <a href="#" style="font-family:var(--font-mono);font-size:0.8rem;font-weight:700;text-decoration:underline;">@solucioncraft &#8599;</a>
+        </article>
+        <article class="card reveal reveal-delay-1">
+          <span class="card-icon">&#128247;</span>
+          <h3>Instagram</h3>
+          <p>Portfolio visual, detrás de cámaras y procesos creativos del equipo.</p>
+          <a href="#" style="font-family:var(--font-mono);font-size:0.8rem;font-weight:700;text-decoration:underline;">@solucioncraft &#8599;</a>
+        </article>
+        <article class="card reveal reveal-delay-2">
+          <span class="card-icon">&#127908;</span>
+          <h3>YouTube</h3>
+          <p>Tutoriales de desarrollo web, diseño y estrategia digital gratuitos.</p>
+          <a href="#" style="font-family:var(--font-mono);font-size:0.8rem;font-weight:700;text-decoration:underline;">Solución Craft &#8599;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-footer">Solución Craft</div>
+        <p>Agencia digital especializada en desarrollo web, diseño y estrategia digital. Bogotá, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Páginas</h4>
+        <a href="index.html">Inicio</a>
+        <a href="quienes.html">Quiénes Somos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="servicios.html">Desarrollo Web</a>
+        <a href="servicios.html">Diseño Profesional</a>
+        <a href="servicios.html">Optimización Digital</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:contacto@solucioncraft.com">contacto@solucioncraft.com</a>
+        <a href="tel:+573000000000">+57 300 000 0000</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year">2025</span> Solución Craft — Todos los derechos reservados</p>
+      <p>Hecho con &#9825; en Bogotá, Colombia</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
