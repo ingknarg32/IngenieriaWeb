@@ -461,6 +461,163 @@
       </div>
     </section>
 
+    <!-- ================================================
+         TEMA 24: SVG (GRÁFICOS VECTORIALES)
+         Gráfico de barras SVG que muestra métricas del proyecto
+         ================================================ -->
+    <section class="svg-section">
+      <div class="container">
+        <p class="section-label">Métricas del proyecto</p>
+        <h2 class="section-title reveal">Nuestros Resultados en SVG</h2>
+        <div class="svg-grid reveal">
+          <!-- SVG: gráfico de barras de satisfacción por servicio -->
+          <figure class="svg-card">
+            <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico de satisfacción por servicio">
+              <title>Satisfacción por servicio</title>
+              <!-- Fondo -->
+              <rect width="360" height="220" fill="#f0f0f0" rx="8"/>
+              <!-- Líneas guía -->
+              <line x1="50" y1="20" x2="50" y2="170" stroke="#c4c4c4" stroke-width="1"/>
+              <line x1="50" y1="170" x2="340" y2="170" stroke="#0d0d0d" stroke-width="2"/>
+              <!-- Barra 1: Desarrollo Web 95% -->
+              <rect x="70" y="51" width="48" height="119" fill="#0d0d0d" rx="4">
+                <animate attributeName="height" from="0" to="119" dur="1s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+                <animate attributeName="y" from="170" to="51" dur="1s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+              </rect>
+              <text x="94" y="44" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d">95%</text>
+              <text x="94" y="188" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#444">Web</text>
+              <!-- Barra 2: Diseño 92% -->
+              <rect x="148" y="57" width="48" height="113" fill="#444444" rx="4">
+                <animate attributeName="height" from="0" to="113" dur="1s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+                <animate attributeName="y" from="170" to="57" dur="1s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+              </rect>
+              <text x="172" y="50" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d">92%</text>
+              <text x="172" y="188" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#444">Diseño</text>
+              <!-- Barra 3: SEO 88% -->
+              <rect x="226" y="66" width="48" height="104" fill="#7a7a7a" rx="4">
+                <animate attributeName="height" from="0" to="104" dur="1s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+                <animate attributeName="y" from="170" to="66" dur="1s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+              </rect>
+              <text x="250" y="59" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d">88%</text>
+              <text x="250" y="188" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#444">SEO</text>
+              <!-- Título -->
+              <text x="195" y="210" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#7a7a7a">Satisfacción por servicio (%)</text>
+              <!-- Eje Y labels -->
+              <text x="44" y="173" text-anchor="end" font-size="8" font-family="Space Mono,monospace" fill="#7a7a7a">0</text>
+              <text x="44" y="123" text-anchor="end" font-size="8" font-family="Space Mono,monospace" fill="#7a7a7a">50</text>
+              <text x="44" y="73" text-anchor="end" font-size="8" font-family="Space Mono,monospace" fill="#7a7a7a">100</text>
+              <line x1="48" y1="120" x2="340" y2="120" stroke="#dcdcdc" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="48" y1="70" x2="340" y2="70" stroke="#dcdcdc" stroke-width="1" stroke-dasharray="4,3"/>
+            </svg>
+            <figcaption>Gráfico SVG animado — satisfacción de clientes por servicio</figcaption>
+          </figure>
+
+          <!-- SVG: logotipo vectorial / icono animado -->
+          <figure class="svg-card">
+            <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Icono animado Solución Craft">
+              <title>Ícono animado de Solución Craft</title>
+              <rect width="360" height="220" fill="#0d0d0d" rx="8"/>
+              <!-- Círculo exterior giratorio -->
+              <circle cx="180" cy="110" r="80" fill="none" stroke="#c4c4c4" stroke-width="2" stroke-dasharray="12,6">
+                <animateTransform attributeName="transform" type="rotate" from="0 180 110" to="360 180 110" dur="12s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Círculo interior pulsante -->
+              <circle cx="180" cy="110" r="55" fill="none" stroke="#7a7a7a" stroke-width="1.5">
+                <animate attributeName="r" values="55;60;55" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Centro sólido -->
+              <circle cx="180" cy="110" r="36" fill="#fafafa"/>
+              <!-- Texto SC centrado -->
+              <text x="180" y="118" text-anchor="middle" font-size="22" font-family="Bebas Neue,Impact,sans-serif" fill="#0d0d0d" letter-spacing="2">SC</text>
+              <!-- Puntos cardinales animados -->
+              <circle cx="180" cy="26" r="5" fill="#fafafa">
+                <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" begin="0s"/>
+              </circle>
+              <circle cx="264" cy="110" r="5" fill="#fafafa">
+                <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
+              </circle>
+              <circle cx="180" cy="194" r="5" fill="#fafafa">
+                <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
+              </circle>
+              <circle cx="96" cy="110" r="5" fill="#fafafa">
+                <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" begin="1.2s"/>
+              </circle>
+              <!-- Label -->
+              <text x="180" y="215" text-anchor="middle" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">SVG animado — ícono vectorial interactivo</text>
+            </svg>
+            <figcaption>Ícono SVG con animaciones nativas — sin JavaScript, sin imágenes</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         TEMA 25: CANVAS
+         Visualizador de datos CSV con canvas interactivo
+         ================================================ -->
+    <section class="canvas-section">
+      <div class="container">
+        <p class="section-label">Visualizador interactivo de datos</p>
+        <h2 class="section-title reveal">Canvas: Gráfico de Proyectos</h2>
+        <div class="canvas-wrapper reveal">
+          <div class="canvas-controls">
+            <button class="btn-secondary" id="btn-barras">Barras</button>
+            <button class="btn-secondary" id="btn-linea">Línea</button>
+            <button class="btn-secondary" id="btn-limpiar">Limpiar</button>
+          </div>
+          <!-- TEMA 25: elemento canvas -->
+          <canvas id="grafico-canvas" width="900" height="320" aria-label="Gráfico de proyectos por mes">
+            Tu navegador no soporta Canvas.
+          </canvas>
+          <p class="canvas-hint">Haz clic en las barras para ver detalle &bull; Usa los botones para cambiar el tipo de gráfico</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         TEMA 27: CONTENIDO EDITABLE
+         Sección de notas del usuario con contenteditable
+         ================================================ -->
+    <section class="editable-section">
+      <div class="container">
+        <p class="section-label">Espacio de trabajo</p>
+        <h2 class="section-title reveal">Tu Bloc de Notas</h2>
+        <p class="reveal" style="color:var(--gray-600);margin-bottom:var(--sp-md);">
+          Haz clic en cualquier texto para editarlo directamente. Tus notas se guardan automáticamente en el navegador
+          <strong>(Tema 28: Storage)</strong>.
+        </p>
+        <div class="editable-grid reveal">
+          <!-- TEMA 27: contenteditable -->
+          <div class="editable-card" contenteditable="true" spellcheck="true" id="nota-1"
+               aria-label="Bloc de notas editable 1" data-storage-key="nota-1">
+            <h3 contenteditable="true">📝 Mis ideas de proyecto</h3>
+            <p>Haz clic aquí para editar este texto. Puedes cambiar el título, añadir ideas, borrar contenido... Todo se guarda automáticamente.</p>
+            <ul>
+              <li>Idea 1: landing page para cliente</li>
+              <li>Idea 2: portafolio con animaciones</li>
+              <li>Idea 3: dashboard con Canvas</li>
+            </ul>
+          </div>
+          <div class="editable-card" contenteditable="true" spellcheck="true" id="nota-2"
+               aria-label="Bloc de notas editable 2" data-storage-key="nota-2">
+            <h3 contenteditable="true">🎯 Objetivos del sprint</h3>
+            <p>Este bloque también es editable. Escribe tus objetivos, tareas o cualquier nota relevante para el proyecto.</p>
+            <ol>
+              <li>Terminar el diseño</li>
+              <li>Subir a GitHub Pages</li>
+              <li>Actualizar el README</li>
+            </ol>
+          </div>
+        </div>
+        <div class="editable-actions">
+          <button class="btn-primary" id="btn-guardar-notas">Guardar notas &#8594;</button>
+          <button class="btn-secondary" id="btn-limpiar-notas">Borrar guardado</button>
+          <span id="storage-status" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--gray-500);"></span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- TEMA 1: footer semántico -->

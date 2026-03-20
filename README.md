@@ -446,6 +446,84 @@ Al cargar la página, el título, párrafo y botón del hero aparecen deslizánd
 | css/styles.css | Líneas 648–655 | Clase .reveal + .visible para scroll reveal |
 | js/main.js | Líneas 55–70 | IntersectionObserver — agrega clase .visible al hacer scroll |
 
+### **Tema 24: SVG (Gráficos Vectoriales)**
+Gráficos vectoriales escalables creados directamente en HTML, con animaciones nativas SVG sin JavaScript.
+📍 **¿Dónde se ve en la página?**
+Sección "Nuestros Resultados en SVG" en index.html: un gráfico de barras animado que muestra satisfacción por servicio (Web 95%, Diseño 92%, SEO 88%), y un ícono animado con círculo giratorio, puntos pulsantes y las iniciales "SC". Ambos son 100% vectoriales, sin imágenes externas.
+📂 **Ubicación en el código:**
+| Archivo | Líneas (aprox.) | Qué hace / Qué enseña |
+|---------|----------------|----------------------|
+| index.html | Sección svg-section | `<section class='svg-section'>` — sección con 2 SVGs |
+| index.html | SVG 1 | `<svg viewBox='0 0 360 220'>` — gráfico de barras con `<rect>`, `<text>`, `<line>` y `<animate>` |
+| index.html | SVG 2 | Ícono con `<circle>`, `<animateTransform>` (rotación), `<animate>` (pulsación) |
+| css/styles.css | Final del archivo | `.svg-section`, `.svg-grid`, `.svg-card` — estilos y hover con sombra cartoon |
+| css/responsive.css | Final del archivo | `.svg-grid { grid-template-columns: 1fr }` en móvil |
+
+### **Tema 25: Canvas**
+Elemento `<canvas>` con dibujo 2D interactivo: gráfico de barras y de línea con datos reales, animaciones y tooltip al hacer clic.
+📍 **¿Dónde se ve en la página?**
+Sección "Canvas: Gráfico de Proyectos" en index.html. Tiene 3 botones: "Barras" dibuja un gráfico con sombra cartoon; "Línea" cambia a modo línea sobre fondo negro; "Limpiar" borra el canvas. Al hacer clic en una barra aparece un toast con el dato del mes.
+📂 **Ubicación en el código:**
+| Archivo | Líneas (aprox.) | Qué hace / Qué enseña |
+|---------|----------------|----------------------|
+| index.html | Sección canvas-section | `<canvas id='grafico-canvas' width='900' height='320'>` |
+| index.html | Sección canvas-section | Botones `#btn-barras`, `#btn-linea`, `#btn-limpiar` para cambiar vista |
+| js/main.js | Bloque TEMA 25 | `canvas.getContext('2d')` — contexto 2D para dibujo |
+| js/main.js | función `dibujarBarras()` | `ctx.fillRect()`, `ctx.roundRect()`, `ctx.fillText()` — barras con sombra |
+| js/main.js | función `dibujarLinea()` | `ctx.beginPath()`, `ctx.arc()`, `ctx.stroke()` — gráfico de línea con puntos |
+| js/main.js | evento `click` en canvas | Detecta clic sobre barra y muestra toast con dato del mes |
+| css/styles.css | Final del archivo | `.canvas-section`, `.canvas-wrapper`, `#grafico-canvas` |
+| css/responsive.css | Final del archivo | `#grafico-canvas { height: 220px }` en móvil |
+
+### **Tema 26: Adaptación a Móviles (mediaqueries)**
+CSS responsive con enfoque mobile-first: breakpoints para móvil, tablet y escritorio, dark mode, reduced motion, print y landscape.
+📍 **¿Dónde se ve en la página?**
+En pantallas pequeñas el nav se reorganiza en filas, el hero apila verticalmente, la galería pasa a 2 columnas, las columnas de texto colapsan a 1, el formulario se vuelve de una sola columna, y el footer en 2 columnas.
+📂 **Ubicación en el código:**
+| Archivo | Líneas (aprox.) | Qué hace / Qué enseña |
+|---------|----------------|----------------------|
+| css/responsive.css | Líneas 6–30 | `@media (max-width:575px)` — móvil pequeño: todo en columna única |
+| css/responsive.css | Líneas 32–45 | `@media (576px–767px)` — tablet portrait: 2 columnas en grillas |
+| css/responsive.css | Líneas 46–56 | `@media (768px–991px)` — tablet landscape: 2-3 columnas |
+| css/responsive.css | Líneas 57–62 | `@media (992px–1199px)` — desktop: 3 columnas features |
+| css/responsive.css | Líneas 63–66 | `@media (min-width:1200px)` — pantallas grandes: 4 columnas features |
+| css/responsive.css | Líneas 68–83 | `@media (prefers-color-scheme:dark)` — dark mode automático |
+| css/responsive.css | Líneas 84–89 | `@media (prefers-reduced-motion:reduce)` — accesibilidad sin animaciones |
+| css/responsive.css | Líneas 90–98 | `@media print` — oculta nav, multimedia y formularios al imprimir |
+| css/responsive.css | Final | Media queries para `.svg-grid` y `.editable-grid` en móvil |
+
+### **Tema 27: Contenido Editable**
+Atributo `contenteditable="true"` en tarjetas de texto editables directamente en el navegador, con autoguardado.
+📍 **¿Dónde se ve en la página?**
+Sección "Tu Bloc de Notas" en index.html. Dos tarjetas con textos y listas editables: al hacer clic aparece el cursor y se puede escribir, borrar o modificar libremente. Se guarda automáticamente tras 1.2 segundos. Badge "Editable" visible en cada tarjeta.
+📂 **Ubicación en el código:**
+| Archivo | Líneas (aprox.) | Qué hace / Qué enseña |
+|---------|----------------|----------------------|
+| index.html | Sección editable-section | `<div contenteditable="true" id="nota-1">` — primera tarjeta editable |
+| index.html | Sección editable-section | `<div contenteditable="true" id="nota-2">` — segunda tarjeta editable |
+| index.html | Sección editable-section | `<h3 contenteditable="true">` — título también editable |
+| index.html | Sección editable-section | `spellcheck="true"` — corrector ortográfico del navegador activado |
+| css/styles.css | Final del archivo | `.editable-card { cursor:text; outline:none }` y `:focus` con sombra cartoon |
+| css/styles.css | Final del archivo | `.editable-card::before { content:'Editable' }` — badge con `position:absolute` |
+| js/main.js | Bloque TEMA 27+28 | `el.addEventListener('input', ...)` — detecta escritura del usuario |
+| js/main.js | Bloque TEMA 27+28 | `clearTimeout` + `setTimeout(guardar, 1200)` — autoguardado con debounce |
+
+### **Tema 28: Storage**
+`localStorage` para persistir el contenido editable entre sesiones: guardado automático, manual y eliminación.
+📍 **¿Dónde se ve en la página?**
+Las notas editables se guardan automáticamente. Al recargar la página, el contenido se restaura. "Guardar notas" guarda manualmente y muestra hora exacta. "Borrar guardado" limpia el localStorage y permite empezar desde cero.
+📂 **Ubicación en el código:**
+| Archivo | Líneas (aprox.) | Qué hace / Qué enseña |
+|---------|----------------|----------------------|
+| js/main.js | Bloque TEMA 27+28 | `localStorage.getItem('sc_nota-1')` — carga el HTML guardado al iniciar |
+| js/main.js | función `guardar()` | `localStorage.setItem('sc_' + key, el.innerHTML)` — guarda HTML completo |
+| js/main.js | Botón limpiar | `localStorage.removeItem('sc_' + key)` — elimina clave específica del storage |
+| js/main.js | Autoguardado | `el.addEventListener('input', ...)` con debounce de 1.2 segundos |
+| index.html | Sección editable-section | `data-storage-key="nota-1"` — atributo de referencia para la clave |
+| index.html | Sección editable-section | `#btn-guardar-notas`, `#btn-limpiar-notas`, `#storage-status` — controles UI |
+
+---
+
 ---
 
 ## �🚀 Cómo Ejecutar el Proyecto
@@ -523,7 +601,7 @@ Reemplazar archivos en carpeta `assets/`
 
 MIT License
 
----
+
 
 ## 👥 Autor
 

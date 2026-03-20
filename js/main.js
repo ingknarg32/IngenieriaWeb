@@ -156,3 +156,308 @@ document.addEventListener('DOMContentLoaded', function () {
 
   console.log('🚀 Solución Craft — scripts cargados');
 });
+
+// =====================================================
+// TEMA 25: CANVAS — Visualizador de datos interactivo
+// =====================================================
+(function () {
+  const canvas = document.getElementById('grafico-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const datos = [
+    { mes: 'Ene', proyectos: 4, color: '#0d0d0d' },
+    { mes: 'Feb', proyectos: 7, color: '#2e2e2e' },
+    { mes: 'Mar', proyectos: 5, color: '#444444' },
+    { mes: 'Abr', proyectos: 9, color: '#5c5c5c' },
+    { mes: 'May', proyectos: 12, color: '#0d0d0d' },
+    { mes: 'Jun', proyectos: 8, color: '#2e2e2e' },
+    { mes: 'Jul', proyectos: 11, color: '#444444' },
+    { mes: 'Ago', proyectos: 15, color: '#0d0d0d' },
+  ];
+
+  let modo = 'barras';
+  const PAD = { top: 30, right: 20, bottom: 50, left: 50 };
+
+  function dibujarBarras() {
+    const W = canvas.width, H = canvas.height;
+    const chartW = W - PAD.left - PAD.right;
+    const chartH = H - PAD.top - PAD.bottom;
+    const maxVal = Math.max(...datos.map(d => d.proyectos)) + 2;
+    const barW = (chartW / datos.length) * 0.55;
+    const gap = (chartW / datos.length) * 0.45;
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#f0f0f0';
+    ctx.fillRect(0, 0, W, H);
+
+    // Ejes
+    ctx.strokeStyle = '#0d0d0d';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(PAD.left, PAD.top);
+    ctx.lineTo(PAD.left, H - PAD.bottom);
+    ctx.lineTo(W - PAD.right, H - PAD.bottom);
+    ctx.stroke();
+
+    // Líneas guía
+    for (let i = 0; i <= 4; i++) {
+      const y = PAD.top + (chartH / 4) * i;
+      const val = Math.round(maxVal - (maxVal / 4) * i);
+      ctx.strokeStyle = '#dcdcdc';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath();
+      ctx.moveTo(PAD.left, y);
+      ctx.lineTo(W - PAD.right, y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#7a7a7a';
+      ctx.font = '11px Space Mono, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText(val, PAD.left - 8, y + 4);
+    }
+
+    // Barras animadas
+    datos.forEach((d, i) => {
+      const x = PAD.left + i * (barW + gap) + gap / 2;
+      const barH = (d.proyectos / maxVal) * chartH;
+      const y = H - PAD.bottom - barH;
+
+      // Barra
+      ctx.fillStyle = d.color;
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(x, y, barW, barH, 4) : ctx.rect(x, y, barW, barH);
+      ctx.fill();
+
+      // Borde cartoon
+      ctx.strokeStyle = '#0d0d0d';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Sombra cartoon
+      ctx.fillStyle = 'rgba(0,0,0,0.2)';
+      ctx.fillRect(x + 4, y + 4, barW, barH);
+      ctx.fillStyle = d.color;
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(x, y, barW, barH, 4) : ctx.rect(x, y, barW, barH);
+      ctx.fill();
+      ctx.strokeStyle = '#0d0d0d';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Valor encima
+      ctx.fillStyle = '#0d0d0d';
+      ctx.font = 'bold 12px Space Mono, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(d.proyectos, x + barW / 2, y - 6);
+
+      // Label mes
+      ctx.fillStyle = '#444';
+      ctx.font = '11px Nunito, sans-serif';
+      ctx.fillText(d.mes, x + barW / 2, H - PAD.bottom + 18);
+    });
+
+    // Título eje Y
+    ctx.save();
+    ctx.translate(14, H / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillStyle = '#7a7a7a';
+    ctx.font = '11px Nunito, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Proyectos entregados', 0, 0);
+    ctx.restore();
+  }
+
+  function dibujarLinea() {
+    const W = canvas.width, H = canvas.height;
+    const chartW = W - PAD.left - PAD.right;
+    const chartH = H - PAD.top - PAD.bottom;
+    const maxVal = Math.max(...datos.map(d => d.proyectos)) + 2;
+    const stepX = chartW / (datos.length - 1);
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0d0d0d';
+    ctx.fillRect(0, 0, W, H);
+
+    // Líneas guía
+    for (let i = 0; i <= 4; i++) {
+      const y = PAD.top + (chartH / 4) * i;
+      const val = Math.round(maxVal - (maxVal / 4) * i);
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath();
+      ctx.moveTo(PAD.left, y);
+      ctx.lineTo(W - PAD.right, y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#7a7a7a';
+      ctx.font = '11px Space Mono, monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText(val, PAD.left - 8, y + 4);
+    }
+
+    // Relleno bajo la línea
+    ctx.beginPath();
+    datos.forEach((d, i) => {
+      const x = PAD.left + i * stepX;
+      const y = PAD.top + chartH - (d.proyectos / maxVal) * chartH;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.lineTo(PAD.left + (datos.length - 1) * stepX, H - PAD.bottom);
+    ctx.lineTo(PAD.left, H - PAD.bottom);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(255,255,255,0.06)';
+    ctx.fill();
+
+    // Línea
+    ctx.beginPath();
+    ctx.strokeStyle = '#fafafa';
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
+    datos.forEach((d, i) => {
+      const x = PAD.left + i * stepX;
+      const y = PAD.top + chartH - (d.proyectos / maxVal) * chartH;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+
+    // Puntos y etiquetas
+    datos.forEach((d, i) => {
+      const x = PAD.left + i * stepX;
+      const y = PAD.top + chartH - (d.proyectos / maxVal) * chartH;
+      ctx.fillStyle = '#fafafa';
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#0d0d0d';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.fillStyle = '#fafafa';
+      ctx.font = 'bold 11px Space Mono, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(d.proyectos, x, y - 12);
+      ctx.fillStyle = '#7a7a7a';
+      ctx.font = '11px Nunito, sans-serif';
+      ctx.fillText(d.mes, x, H - PAD.bottom + 18);
+    });
+
+    // Ejes
+    ctx.strokeStyle = '#fafafa';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(PAD.left, PAD.top);
+    ctx.lineTo(PAD.left, H - PAD.bottom);
+    ctx.lineTo(W - PAD.right, H - PAD.bottom);
+    ctx.stroke();
+  }
+
+  function render() {
+    modo === 'barras' ? dibujarBarras() : dibujarLinea();
+  }
+
+  render();
+
+  document.getElementById('btn-barras')?.addEventListener('click', () => { modo = 'barras'; render(); });
+  document.getElementById('btn-linea')?.addEventListener('click', () => { modo = 'linea'; render(); });
+  document.getElementById('btn-limpiar')?.addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#f0f0f0';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#7a7a7a';
+    ctx.font = '16px Nunito, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Canvas limpio — haz clic en Barras o Línea para dibujar', canvas.width / 2, canvas.height / 2);
+  });
+
+  // Tooltip al hacer clic en barra
+  canvas.addEventListener('click', (e) => {
+    if (modo !== 'barras') return;
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const mx = (e.clientX - rect.left) * scaleX;
+    const chartW = canvas.width - PAD.left - PAD.right;
+    const maxVal = Math.max(...datos.map(d => d.proyectos)) + 2;
+    const barW = (chartW / datos.length) * 0.55;
+    const gap = (chartW / datos.length) * 0.45;
+
+    datos.forEach((d, i) => {
+      const x = PAD.left + i * (barW + gap) + gap / 2;
+      if (mx >= x && mx <= x + barW) {
+        showToast(`${d.mes}: ${d.proyectos} proyectos entregados`, 'info');
+      }
+    });
+  });
+
+  function showToast(msg, type) {
+    const t = document.createElement('div');
+    t.textContent = msg;
+    Object.assign(t.style, {
+      position:'fixed', bottom:'28px', right:'28px',
+      background:'#0d0d0d', color:'#fafafa',
+      padding:'12px 20px', border:'3px solid #fafafa',
+      borderRadius:'8px', fontFamily:"'Nunito',sans-serif",
+      fontWeight:'700', fontSize:'0.85rem',
+      boxShadow:'5px 5px 0 #fafafa', zIndex:'99999',
+      transform:'translateY(80px)', opacity:'0',
+      transition:'transform 0.35s cubic-bezier(0.34,1.56,0.64,1),opacity 0.3s ease'
+    });
+    document.body.appendChild(t);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      t.style.transform = 'translateY(0)'; t.style.opacity = '1';
+    }));
+    setTimeout(() => { t.style.transform = 'translateY(80px)'; t.style.opacity = '0';
+      setTimeout(() => t.remove(), 350); }, 2500);
+  }
+})();
+
+// =====================================================
+// TEMA 27 + 28: CONTENIDO EDITABLE + STORAGE
+// =====================================================
+(function () {
+  const KEYS = ['nota-1', 'nota-2'];
+
+  // Tema 28: cargar desde localStorage al iniciar
+  KEYS.forEach(key => {
+    const el = document.getElementById(key);
+    if (!el) return;
+    const saved = localStorage.getItem('sc_' + key);
+    if (saved) el.innerHTML = saved;
+  });
+
+  // Tema 28: guardar en localStorage
+  function guardar() {
+    KEYS.forEach(key => {
+      const el = document.getElementById(key);
+      if (el) localStorage.setItem('sc_' + key, el.innerHTML);
+    });
+    const st = document.getElementById('storage-status');
+    if (st) {
+      st.textContent = '✓ Guardado en localStorage — ' + new Date().toLocaleTimeString('es-CO');
+      setTimeout(() => { st.textContent = ''; }, 3000);
+    }
+  }
+
+  // Autoguardado al escribir (Tema 27: input en contenteditable)
+  KEYS.forEach(key => {
+    const el = document.getElementById(key);
+    if (el) el.addEventListener('input', () => {
+      clearTimeout(el._saveTimer);
+      el._saveTimer = setTimeout(guardar, 1200);
+    });
+  });
+
+  // Botón guardar manual
+  document.getElementById('btn-guardar-notas')?.addEventListener('click', guardar);
+
+  // Botón limpiar storage
+  document.getElementById('btn-limpiar-notas')?.addEventListener('click', () => {
+    KEYS.forEach(key => localStorage.removeItem('sc_' + key));
+    const st = document.getElementById('storage-status');
+    if (st) {
+      st.textContent = '🗑 Notas eliminadas del storage';
+      setTimeout(() => { st.textContent = ''; }, 2500);
+    }
+  });
+})();

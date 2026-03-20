@@ -712,3 +712,155 @@ footer{
 
 a{color:inherit;}
 img{max-width:100%;height:auto;}
+
+/* =====================================================
+   TEMA 24: SVG (GRÁFICOS VECTORIALES)
+   ===================================================== */
+.svg-section {
+  padding: var(--sp-2xl) 0;
+  border-bottom: var(--border-thick);
+  background: var(--gray-100);
+}
+.svg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-md);
+  margin-top: var(--sp-lg);
+}
+.svg-card {
+  border: var(--border-cartoon);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-cartoon);
+  overflow: hidden;
+  background: var(--white);
+  transition: transform var(--transition), box-shadow var(--transition);
+  margin: 0;
+}
+.svg-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-hover);
+}
+.svg-card svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.svg-card figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  padding: 8px var(--sp-sm);
+  border-top: 2px solid var(--gray-200);
+}
+
+/* =====================================================
+   TEMA 25: CANVAS
+   ===================================================== */
+.canvas-section {
+  padding: var(--sp-2xl) 0;
+  border-bottom: var(--border-thick);
+  background: var(--white);
+}
+.canvas-wrapper {
+  border: var(--border-cartoon);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-cartoon);
+  overflow: hidden;
+  background: var(--white);
+}
+.canvas-controls {
+  background: var(--black);
+  padding: 0.65rem var(--sp-sm);
+  display: flex;
+  gap: var(--sp-sm);
+  border-bottom: var(--border-cartoon);
+}
+.canvas-controls .btn-secondary {
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  box-shadow: 2px 2px 0 var(--gray-300);
+}
+.canvas-controls .btn-secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--gray-300);
+}
+#grafico-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+.canvas-hint {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gray-500);
+  padding: 8px var(--sp-sm);
+  border-top: 1px solid var(--gray-200);
+  letter-spacing: 0.04em;
+}
+
+/* =====================================================
+   TEMA 27: CONTENIDO EDITABLE
+   ===================================================== */
+.editable-section {
+  padding: var(--sp-2xl) 0;
+  border-bottom: var(--border-thick);
+  background: var(--gray-100);
+}
+.editable-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-md);
+  margin-bottom: var(--sp-md);
+}
+.editable-card {
+  background: var(--white);
+  border: var(--border-cartoon);
+  border-radius: var(--radius-md);
+  padding: var(--sp-lg);
+  box-shadow: var(--shadow-cartoon);
+  min-height: 220px;
+  outline: none;
+  transition: box-shadow var(--transition), transform var(--transition);
+  cursor: text;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--black);
+  line-height: 1.7;
+}
+.editable-card:focus {
+  box-shadow: var(--shadow-hover);
+  transform: translate(-2px, -2px);
+  border-color: var(--black);
+}
+.editable-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: var(--sp-sm);
+  outline: none;
+  cursor: text;
+}
+.editable-card ul,
+.editable-card ol {
+  padding-left: 1.4rem;
+  margin-top: var(--sp-sm);
+}
+.editable-card li { margin-bottom: 4px; }
+.editable-card::before {
+  content: 'Editable';
+  position: absolute;
+  top: 10px; right: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  pointer-events: none;
+}
+.editable-card { position: relative; }
+.editable-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  flex-wrap: wrap;
+}
