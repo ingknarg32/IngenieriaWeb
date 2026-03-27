@@ -864,3 +864,25 @@ img{max-width:100%;height:auto;}
   gap: var(--sp-sm);
   flex-wrap: wrap;
 }
+
+/* =====================================================
+   SVG ICONS INLINE EN CARDS
+   ===================================================== */
+article.card .card-icon svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  transition: transform var(--transition);
+}
+article.card:hover .card-icon svg {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+/* =====================================================
+   SVG GRID — 2 columnas en visualizador
+   ===================================================== */
+.svg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-md);
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!-- TEMA 1: ESTRUCTURA SEMÁNTICA HTML5 -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Solución Craft — Visualizador interactivo SVG y Canvas: gráficos animados y datos en tiempo real.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG &amp; Canvas — Solución Craft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+</head>
+<body>
+
+  <header class="main-header">
+    <a href="index.html" class="header-brand">
+      <img src="assets/img/logo.jpeg" alt="Logo Solución Craft" class="logo">
+      <div>
+        <h1>Solución Craft</h1>
+        <p class="header-tagline">Agencia Digital &mdash; Bogotá, Colombia</p>
+      </div>
+    </a>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="quienes.html">Quiénes Somos</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="visualizador.html" class="active">SVG &amp; Canvas</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span class="ticker-item">SVG Animado</span>
+      <span class="ticker-item">Canvas Interactivo</span>
+      <span class="ticker-item">Datos en tiempo real</span>
+      <span class="ticker-item">Graficos vectoriales</span>
+      <span class="ticker-item">Visualizacion de datos</span>
+      <span class="ticker-item">SVG Animado</span>
+      <span class="ticker-item">Canvas Interactivo</span>
+      <span class="ticker-item">Datos en tiempo real</span>
+      <span class="ticker-item">Graficos vectoriales</span>
+      <span class="ticker-item">Visualizacion de datos</span>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="hero-badge">&#9679; Tema 24 &amp; 25 — SVG y Canvas</span>
+          <h2>Visualizador<br><em>Interactivo</em><br>de Datos</h2>
+          <p class="lead">
+            Graficos animados con SVG puro y Canvas 2D interactivo.
+            Haz clic, explora y visualiza metricas reales de proyecto.
+          </p>
+          <a href="#canvas-section" class="hero-cta">Ver graficos &#8594;</a>
+        </div>
+        <aside class="hero-stats">
+          <div class="stat-card"><div class="num">SVG</div><div class="lbl">Tema 24</div></div>
+          <div class="stat-card"><div class="num">2D</div><div class="lbl">Canvas</div></div>
+          <div class="stat-card"><div class="num">0px</div><div class="lbl">Imagenes</div></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================================================
+         TEMA 24: SVG — Gráficos vectoriales
+         ================================================ -->
+    <section class="svg-section">
+      <div class="container">
+        <p class="section-label">Tema 24 — Graficos vectoriales</p>
+        <h2 class="section-title reveal">SVG: Metricas en Vectores</h2>
+        <p class="reveal" style="color:var(--gray-600);margin-bottom:var(--sp-lg);">
+          Todos los graficos de esta seccion son SVG puros — sin imagenes, sin librerías externas.
+          Se escalan perfectamente a cualquier resolucion y tienen animaciones nativas.
+        </p>
+
+        <div class="svg-grid reveal">
+
+          <!-- SVG 1: gráfico de barras animado -->
+          <figure class="svg-card">
+            <svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grafico de satisfaccion por servicio">
+              <title>Satisfaccion por servicio — Solucion Craft</title>
+              <rect width="380" height="240" fill="#f0f0f0" rx="8"/>
+              <!-- Ejes -->
+              <line x1="55" y1="20" x2="55" y2="185" stroke="#c4c4c4" stroke-width="1.5"/>
+              <line x1="55" y1="185" x2="360" y2="185" stroke="#0d0d0d" stroke-width="2.5"/>
+              <!-- Líneas guía -->
+              <line x1="53" y1="135" x2="360" y2="135" stroke="#dcdcdc" stroke-width="1" stroke-dasharray="5,4"/>
+              <line x1="53" y1="85"  x2="360" y2="85"  stroke="#dcdcdc" stroke-width="1" stroke-dasharray="5,4"/>
+              <line x1="53" y1="35"  x2="360" y2="35"  stroke="#dcdcdc" stroke-width="1" stroke-dasharray="5,4"/>
+              <!-- Labels eje Y -->
+              <text x="48" y="188" text-anchor="end" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">0</text>
+              <text x="48" y="138" text-anchor="end" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">50</text>
+              <text x="48" y="88"  text-anchor="end" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">75</text>
+              <text x="48" y="38"  text-anchor="end" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">100</text>
+              <!-- Barra 1: Web 95% -->
+              <rect x="75" y="62" width="44" height="123" fill="#0d0d0d" rx="4">
+                <animate attributeName="height" from="0" to="123" dur="0.9s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+                <animate attributeName="y" from="185" to="62" dur="0.9s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+              </rect>
+              <text x="97" y="55" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d" font-weight="bold">95%</text>
+              <text x="97" y="202" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#444">Web</text>
+              <!-- Barra 2: Diseño 92% -->
+              <rect x="145" y="68" width="44" height="117" fill="#2e2e2e" rx="4">
+                <animate attributeName="height" from="0" to="117" dur="0.9s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+                <animate attributeName="y" from="185" to="68" dur="0.9s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+              </rect>
+              <text x="167" y="61" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d" font-weight="bold">92%</text>
+              <text x="167" y="202" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#444">Diseno</text>
+              <!-- Barra 3: SEO 88% -->
+              <rect x="215" y="76" width="44" height="109" fill="#7a7a7a" rx="4">
+                <animate attributeName="height" from="0" to="109" dur="0.9s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+                <animate attributeName="y" from="185" to="76" dur="0.9s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+              </rect>
+              <text x="237" y="69" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d" font-weight="bold">88%</text>
+              <text x="237" y="202" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#444">SEO</text>
+              <!-- Barra 4: Soporte 97% -->
+              <rect x="285" y="57" width="44" height="128" fill="#444444" rx="4">
+                <animate attributeName="height" from="0" to="128" dur="0.9s" begin="0.45s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+                <animate attributeName="y" from="185" to="57" dur="0.9s" begin="0.45s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+              </rect>
+              <text x="307" y="50" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d" font-weight="bold">97%</text>
+              <text x="307" y="202" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#444">Soporte</text>
+              <!-- Título -->
+              <text x="210" y="228" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#7a7a7a">Satisfaccion de clientes por area (%)</text>
+            </svg>
+            <figcaption>SVG Tema 24 — Grafico de barras animado con &lt;animate&gt; nativo, sin JavaScript ni librerias</figcaption>
+          </figure>
+
+          <!-- SVG 2: ícono animado + diagrama de línea -->
+          <figure class="svg-card">
+            <svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama de crecimiento de proyectos">
+              <title>Crecimiento de proyectos — Solucion Craft</title>
+              <rect width="380" height="240" fill="#0d0d0d" rx="8"/>
+              <!-- Fondo grid sutil -->
+              <line x1="55" y1="20" x2="55" y2="185" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+              <line x1="55" y1="185" x2="360" y2="185" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+              <line x1="55" y1="140" x2="360" y2="140" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="55" y1="95"  x2="360" y2="95"  stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="55" y1="50"  x2="360" y2="50"  stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4,4"/>
+              <!-- Labels eje Y -->
+              <text x="50" y="188" text-anchor="end" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">0</text>
+              <text x="50" y="143" text-anchor="end" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">5</text>
+              <text x="50" y="98"  text-anchor="end" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">10</text>
+              <text x="50" y="53"  text-anchor="end" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">15</text>
+              <!-- Área bajo la línea (degradado) -->
+              <defs>
+                <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#fafafa" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="#fafafa" stop-opacity="0.01"/>
+                </linearGradient>
+              </defs>
+              <polygon points="75,170 135,155 195,130 255,100 315,60 355,40 355,185 75,185" fill="url(#areaGrad)"/>
+              <!-- Línea de tendencia -->
+              <polyline points="75,170 135,155 195,130 255,100 315,60 355,40"
+                fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+                <animate attributeName="stroke-dasharray" from="0,600" to="600,0" dur="1.4s" fill="freeze"/>
+              </polyline>
+              <!-- Puntos -->
+              <circle cx="75"  cy="170" r="5" fill="#fafafa" stroke="#0d0d0d" stroke-width="2">
+                <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.2s" fill="freeze"/>
+              </circle>
+              <circle cx="135" cy="155" r="5" fill="#fafafa" stroke="#0d0d0d" stroke-width="2">
+                <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.45s" fill="freeze"/>
+              </circle>
+              <circle cx="195" cy="130" r="5" fill="#fafafa" stroke="#0d0d0d" stroke-width="2">
+                <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.7s" fill="freeze"/>
+              </circle>
+              <circle cx="255" cy="100" r="5" fill="#fafafa" stroke="#0d0d0d" stroke-width="2">
+                <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.95s" fill="freeze"/>
+              </circle>
+              <circle cx="315" cy="60"  r="5" fill="#fafafa" stroke="#0d0d0d" stroke-width="2">
+                <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.2s" fill="freeze"/>
+              </circle>
+              <circle cx="355" cy="40"  r="7" fill="#fafafa" stroke="#0d0d0d" stroke-width="2">
+                <animate attributeName="r" values="7;10;7" dur="1.5s" begin="1.4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.4s" fill="freeze"/>
+              </circle>
+              <!-- Valores -->
+              <text x="75"  y="163" text-anchor="middle" font-size="10" font-family="Space Mono,monospace" fill="#c4c4c4">4</text>
+              <text x="135" y="148" text-anchor="middle" font-size="10" font-family="Space Mono,monospace" fill="#c4c4c4">6</text>
+              <text x="195" y="123" text-anchor="middle" font-size="10" font-family="Space Mono,monospace" fill="#c4c4c4">9</text>
+              <text x="255" y="93"  text-anchor="middle" font-size="10" font-family="Space Mono,monospace" fill="#c4c4c4">11</text>
+              <text x="315" y="53"  text-anchor="middle" font-size="10" font-family="Space Mono,monospace" fill="#c4c4c4">13</text>
+              <text x="355" y="33"  text-anchor="middle" font-size="10" font-family="Space Mono,monospace" fill="#fafafa" font-weight="bold">15</text>
+              <!-- Labels eje X -->
+              <text x="75"  y="202" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#7a7a7a">2020</text>
+              <text x="135" y="202" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#7a7a7a">2021</text>
+              <text x="195" y="202" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#7a7a7a">2022</text>
+              <text x="255" y="202" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#7a7a7a">2023</text>
+              <text x="315" y="202" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#7a7a7a">2024</text>
+              <text x="355" y="202" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#fafafa">2025</text>
+              <text x="210" y="228" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#5c5c5c">Proyectos mensuales por ano</text>
+              <!-- Ícono SC animado esquina -->
+              <circle cx="345" cy="215" r="16" fill="none" stroke="#444" stroke-width="1.5" stroke-dasharray="8,4">
+                <animateTransform attributeName="transform" type="rotate" from="0 345 215" to="360 345 215" dur="10s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="345" cy="215" r="10" fill="#1a1a1a"/>
+              <text x="345" y="219" text-anchor="middle" font-size="9" font-family="Bebas Neue,Impact,sans-serif" fill="#fafafa" letter-spacing="1">SC</text>
+            </svg>
+            <figcaption>SVG Tema 24 — Grafico de linea con &lt;polyline&gt;, &lt;animate&gt;, &lt;defs&gt; y degradado lineal</figcaption>
+          </figure>
+
+          <!-- SVG 3: donut / pastel -->
+          <figure class="svg-card">
+            <svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribucion de servicios">
+              <title>Distribucion de proyectos por tipo</title>
+              <rect width="380" height="240" fill="#f0f0f0" rx="8"/>
+              <!-- Donut chart manual con stroke-dasharray -->
+              <!-- Total circunferencia con r=70: 2*pi*70 ≈ 439.8 -->
+              <!-- Web 40%: 175.9 -->
+              <circle cx="140" cy="120" r="70" fill="none" stroke="#0d0d0d" stroke-width="28"
+                stroke-dasharray="175.9 263.9" stroke-dashoffset="0" transform="rotate(-90 140 120)">
+                <animate attributeName="stroke-dasharray" from="0 439.8" to="175.9 263.9" dur="1s" fill="freeze"/>
+              </circle>
+              <!-- Diseño 30%: 131.9 -->
+              <circle cx="140" cy="120" r="70" fill="none" stroke="#7a7a7a" stroke-width="28"
+                stroke-dasharray="131.9 307.9" stroke-dashoffset="-175.9" transform="rotate(-90 140 120)">
+                <animate attributeName="stroke-dasharray" from="0 439.8" to="131.9 307.9" dur="1s" begin="0.3s" fill="freeze"/>
+              </circle>
+              <!-- SEO 20%: 87.96 -->
+              <circle cx="140" cy="120" r="70" fill="none" stroke="#c4c4c4" stroke-width="28"
+                stroke-dasharray="87.96 351.84" stroke-dashoffset="-307.8" transform="rotate(-90 140 120)">
+                <animate attributeName="stroke-dasharray" from="0 439.8" to="87.96 351.84" dur="1s" begin="0.6s" fill="freeze"/>
+              </circle>
+              <!-- Soporte 10%: 43.98 -->
+              <circle cx="140" cy="120" r="70" fill="none" stroke="#444" stroke-width="28"
+                stroke-dasharray="43.98 395.82" stroke-dashoffset="-395.76" transform="rotate(-90 140 120)">
+                <animate attributeName="stroke-dasharray" from="0 439.8" to="43.98 395.82" dur="1s" begin="0.9s" fill="freeze"/>
+              </circle>
+              <!-- Centro -->
+              <circle cx="140" cy="120" r="44" fill="#f0f0f0"/>
+              <text x="140" y="115" text-anchor="middle" font-size="18" font-family="Bebas Neue,Impact,sans-serif" fill="#0d0d0d">100</text>
+              <text x="140" y="130" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#7a7a7a">proyectos</text>
+              <!-- Leyenda -->
+              <rect x="240" y="55"  width="12" height="12" fill="#0d0d0d" rx="2"/><text x="258" y="65"  font-size="11" font-family="Nunito,sans-serif" fill="#444">Web (40%)</text>
+              <rect x="240" y="80"  width="12" height="12" fill="#7a7a7a" rx="2"/><text x="258" y="90"  font-size="11" font-family="Nunito,sans-serif" fill="#444">Diseno (30%)</text>
+              <rect x="240" y="105" width="12" height="12" fill="#c4c4c4" rx="2"/><text x="258" y="115" font-size="11" font-family="Nunito,sans-serif" fill="#444">SEO (20%)</text>
+              <rect x="240" y="130" width="12" height="12" fill="#444" rx="2"/>   <text x="258" y="140" font-size="11" font-family="Nunito,sans-serif" fill="#444">Soporte (10%)</text>
+              <text x="210" y="228" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#7a7a7a">Distribucion de proyectos por tipo de servicio</text>
+            </svg>
+            <figcaption>SVG Tema 24 — Grafico donut con &lt;circle&gt; stroke-dasharray/dashoffset animado</figcaption>
+          </figure>
+
+          <!-- SVG 4: ícono de marca animado -->
+          <figure class="svg-card">
+            <svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Icono animado Solucion Craft">
+              <title>Icono animado de Solucion Craft</title>
+              <rect width="380" height="240" fill="#0d0d0d" rx="8"/>
+              <!-- Círculo exterior giratorio -->
+              <circle cx="190" cy="120" r="90" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="14,7">
+                <animateTransform attributeName="transform" type="rotate" from="0 190 120" to="360 190 120" dur="18s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Círculo medio giratorio inverso -->
+              <circle cx="190" cy="120" r="68" fill="none" stroke="#2e2e2e" stroke-width="1.5" stroke-dasharray="8,10">
+                <animateTransform attributeName="transform" type="rotate" from="0 190 120" to="-360 190 120" dur="10s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Círculo interior pulsante -->
+              <circle cx="190" cy="120" r="46" fill="none" stroke="#444" stroke-width="1.5">
+                <animate attributeName="r" values="46;52;46" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Centro sólido -->
+              <circle cx="190" cy="120" r="30" fill="#fafafa"/>
+              <text x="190" y="128" text-anchor="middle" font-size="20" font-family="Bebas Neue,Impact,sans-serif" fill="#0d0d0d" letter-spacing="2">SC</text>
+              <!-- 4 puntos cardinales pulsantes -->
+              <circle cx="190" cy="22" r="5" fill="#fafafa"><animate attributeName="opacity" values="1;0.1;1" dur="2s" repeatCount="indefinite" begin="0s"/></circle>
+              <circle cx="284" cy="120" r="5" fill="#fafafa"><animate attributeName="opacity" values="1;0.1;1" dur="2s" repeatCount="indefinite" begin="0.5s"/></circle>
+              <circle cx="190" cy="218" r="5" fill="#fafafa"><animate attributeName="opacity" values="1;0.1;1" dur="2s" repeatCount="indefinite" begin="1s"/></circle>
+              <circle cx="96"  cy="120" r="5" fill="#fafafa"><animate attributeName="opacity" values="1;0.1;1" dur="2s" repeatCount="indefinite" begin="1.5s"/></circle>
+              <!-- Label -->
+              <text x="190" y="232" text-anchor="middle" font-size="9" font-family="Space Mono,monospace" fill="#5c5c5c">SVG animado — sin JavaScript, solo etiquetas SVG</text>
+            </svg>
+            <figcaption>SVG Tema 24 — Icono con &lt;animateTransform&gt; rotacion dual, &lt;animate&gt; pulsacion y opacidad</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         TEMA 25: CANVAS — Visualizador interactivo
+         ================================================ -->
+    <section class="canvas-section" id="canvas-section">
+      <div class="container">
+        <p class="section-label">Tema 25 — Canvas 2D interactivo</p>
+        <h2 class="section-title reveal">Canvas: Grafico de Proyectos</h2>
+        <p class="reveal" style="color:var(--gray-600);margin-bottom:var(--sp-lg);">
+          El elemento &lt;canvas&gt; permite dibujar graficos 2D con JavaScript. Cambia el tipo de grafico,
+          haz clic en las barras para ver detalles, o limpiar el lienzo completamente.
+        </p>
+        <div class="canvas-wrapper reveal">
+          <div class="canvas-controls">
+            <button class="btn-secondary" id="btn-barras">Barras</button>
+            <button class="btn-secondary" id="btn-linea">Linea</button>
+            <button class="btn-secondary" id="btn-limpiar">Limpiar</button>
+          </div>
+          <!-- TEMA 25: elemento canvas -->
+          <canvas id="grafico-canvas" width="900" height="320" aria-label="Grafico de proyectos por mes">
+            Tu navegador no soporta Canvas.
+          </canvas>
+          <p class="canvas-hint">Haz clic en las barras para ver detalle &bull; Usa los botones para cambiar el tipo de grafico</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <div class="container">
+        <h2>Listo para crear algo increible?</h2>
+        <p>Contactanos y llevamos tu proyecto al siguiente nivel.</p>
+        <a href="contacto.html" class="hero-cta" style="display:inline-flex;">Contactar &#8594;</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-footer">Solucion Craft</div>
+          <p>Agencia digital especializada en desarrollo web, diseno y estrategia digital. Bogota, Colombia.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Paginas</h4>
+          <a href="index.html">Inicio</a>
+          <a href="quienes.html">Quienes Somos</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="visualizador.html">SVG &amp; Canvas</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <a href="servicios.html">Desarrollo Web</a>
+          <a href="servicios.html">Diseno Profesional</a>
+          <a href="servicios.html">Optimizacion Digital</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="mailto:contacto@solucioncraft.com">contacto@solucioncraft.com</a>
+          <a href="tel:+573016986210">+57 301 698 6210</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year">2025</span> Solucion Craft — Todos los derechos reservados</p>
+        <p>Hecho con &#9825; en Bogota, Colombia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

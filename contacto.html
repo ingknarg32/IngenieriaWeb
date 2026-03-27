@@ -10,6 +10,29 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+  <!-- EmailJS SDK — para envío de correos desde el formulario de contacto -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    // ============================================================
+    // CONFIGURACIÓN DE EMAILJS
+    // Pasos para activar el envío real de correos:
+    //
+    // 1. Crea una cuenta gratis en https://www.emailjs.com
+    // 2. En "Email Services" conecta tu Gmail (ing.knarg32@gmail.com)
+    //    y anota el Service ID (reemplaza 'service_solucioncraft')
+    // 3. En "Email Templates" crea un template con las variables:
+    //    {{from_name}}, {{from_email}}, {{empresa}}, {{telefono}},
+    //    {{ciudad}}, {{prioridad}}, {{presupuesto}}, {{servicios}},
+    //    {{tipo_proyecto}}, {{fecha_reunion}}, {{hora}}, {{mensaje}}
+    //    y anota el Template ID (reemplaza 'template_contacto')
+    // 4. En "Account > API Keys" copia tu Public Key
+    //    y reemplaza 'TU_PUBLIC_KEY_AQUI' abajo.
+    // ============================================================
+    (function(){
+      emailjs.init({ publicKey: 'TU_PUBLIC_KEY_AQUI' });
+      console.log('%c📧 EmailJS inicializado — reemplaza TU_PUBLIC_KEY_AQUI en contacto.html con tu clave real de emailjs.com', 'color:darkorange;font-weight:bold;');
+    })();
+  </script>
 </head>
 <body>
 
@@ -27,6 +50,7 @@
   <a href="index.html">Inicio</a>
   <a href="quienes.html">Quiénes Somos</a>
   <a href="servicios.html">Servicios</a>
+  <a href="visualizador.html">SVG &amp; Canvas</a>
   <a href="contacto.html" class="active">Contacto</a>
 </nav>
 
@@ -107,8 +131,8 @@
             <p class="section-label" style="margin-bottom:var(--sp-sm);">Nuestra ubicación</p>
             <div class="iframe-wrapper" style="border-radius:var(--radius-md);">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7836282041286!2d-74.08175!3d4.71099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sco!4v1710000000000"
-                title="Ubicación de Solución Craft en Bogotá, Colombia"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5209143507415!2d-74.06768962426666!3d4.724430342008694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9971c7b03109%3A0x90a2d68e2b7f52f6!2sCl.%2022%20%2337-09%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1710000000001!5m2!1ses!2sco"
+                title="Ubicación ficticia de Solución Craft — Calle 22 #37-09, Bogotá, Colombia"
                 allowfullscreen
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">

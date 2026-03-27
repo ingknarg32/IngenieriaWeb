@@ -1,6 +1,8 @@
-// =====================================================
-// SOLUCIÓN CRAFT — main.js
-// =====================================================
+const EMAILJS_CONFIG = {
+  publicKey:  'TU_PUBLIC_KEY',   // ← aquí
+  serviceId:  'TU_SERVICE_ID',   // ← aquí
+  templateId: 'TU_TEMPLATE_ID'   // ← aquí
+};
 
 document.addEventListener('DOMContentLoaded', function () {
 

@@ -3,35 +3,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <!-- TEMA 2: etiqueta meta description -->
   <meta name="description" content="Solución Craft - Agencia de soluciones digitales profesionales: desarrollo web, diseño y optimización tecnológica.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- TEMA 5: open graph -->
   <meta property="og:title" content="Solución Craft">
   <meta property="og:description" content="Transformamos ideas en realidad digital.">
   <title>Solución Craft — Soluciones Digitales</title>
-
-  <!-- TEMA 10: TIPOGRAFÍAS vía Google Fonts (también en CSS) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- TEMA 4: CSS externo -->
   <link rel="stylesheet" href="css/styles.css">
-  <!-- TEMA 26: CSS responsive externo -->
   <link rel="stylesheet" href="css/responsive.css">
-
-  <!-- TEMA 6: FAVICON -->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
   <link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
   <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 </head>
-
 <body>
 
   <!-- TEMA 1: header semántico -->
   <header class="main-header">
     <a href="index.html" class="header-brand">
-      <!-- TEMA 3: IMAGEN con alt -->
       <img src="assets/img/logo.jpeg" alt="Logo Solución Craft" class="logo">
       <div>
         <h1>Solución Craft</h1>
@@ -40,12 +29,12 @@
     </a>
   </header>
 
-  <!-- TEMA 1: nav semántico -->
+  <!-- TEMA 1: nav semántico — 5 páginas -->
   <nav>
-    <!-- TEMA 3: ENLACES -->
     <a href="index.html" class="active">Inicio</a>
     <a href="quienes.html">Quiénes Somos</a>
     <a href="servicios.html">Servicios</a>
+    <a href="visualizador.html">SVG &amp; Canvas</a>
     <a href="contacto.html">Contacto</a>
   </nav>
 
@@ -53,43 +42,34 @@
   <div class="ticker" aria-hidden="true">
     <div class="ticker-inner">
       <span class="ticker-item">Desarrollo Web</span>
-      <span class="ticker-item">Diseño Profesional</span>
-      <span class="ticker-item">Optimización Digital</span>
+      <span class="ticker-item">Diseno Profesional</span>
+      <span class="ticker-item">Optimizacion Digital</span>
       <span class="ticker-item">UX / UI Design</span>
       <span class="ticker-item">SEO Avanzado</span>
       <span class="ticker-item">Estrategia Digital</span>
-      <!-- Duplicado para el loop continuo -->
       <span class="ticker-item">Desarrollo Web</span>
-      <span class="ticker-item">Diseño Profesional</span>
-      <span class="ticker-item">Optimización Digital</span>
+      <span class="ticker-item">Diseno Profesional</span>
+      <span class="ticker-item">Optimizacion Digital</span>
       <span class="ticker-item">UX / UI Design</span>
       <span class="ticker-item">SEO Avanzado</span>
       <span class="ticker-item">Estrategia Digital</span>
     </div>
   </div>
 
-  <!-- TEMA 1: main semántico -->
   <main>
 
-    <!-- ================================================
-         HERO — TEMA 9: BG, TEMA 22: DEGRADADOS, TEMA 23: ANIMACIONES
-         ================================================ -->
+    <!-- HERO — TEMA 9, 22, 23 -->
     <section class="hero-section">
       <div class="container hero-inner">
         <div class="hero-text">
           <span class="hero-badge">&#9679; Disponible para nuevos proyectos</span>
-          <!-- TEMA 2: h2 -->
           <h2>Soluciones<br><em>Digitales</em><br>Profesionales</h2>
           <p class="lead">
-            Transformamos tus ideas en realidad digital. Diseño con propósito,
-            código con calidad, resultados con impacto.
+            Transformamos tus ideas en realidad digital. Diseno con proposito,
+            codigo con calidad, resultados con impacto.
           </p>
-          <!-- TEMA 3: ENLACE como CTA -->
-          <a href="contacto.html" class="hero-cta">
-            Iniciar Proyecto &#8594;
-          </a>
+          <a href="contacto.html" class="hero-cta">Iniciar Proyecto &#8594;</a>
         </div>
-        <!-- TEMA 2: aside semántico dentro de hero -->
         <aside class="hero-stats">
           <div class="stat-card">
             <div class="num">+100</div>
@@ -97,74 +77,95 @@
           </div>
           <div class="stat-card">
             <div class="num">5+</div>
-            <div class="lbl">Años</div>
+            <div class="lbl">Anos</div>
           </div>
           <div class="stat-card">
             <div class="num">98%</div>
-            <div class="lbl">Satisfacción</div>
+            <div class="lbl">Satisfaccion</div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- ================================================
-         FEATURES — TEMA 3: LISTAS, TEMA 7: BORDES, TEMA 8: SOMBRAS
-         ================================================ -->
+    <!-- FEATURES — TEMA 3, 7, 8, 13 -->
     <section class="features-section">
       <div class="container">
         <p class="section-label">Nuestras capacidades</p>
-        <h2 class="section-title">¿Qué hacemos?</h2>
-
-        <!-- TEMA 13: FLEX / GRID en CSS -->
+        <h2 class="section-title">¿Que hacemos?</h2>
         <div class="features-grid">
 
-          <!-- TEMA 7: border-radius en cada card -->
           <article class="card reveal">
-            <span class="card-icon">&#128187;</span>
+            <!-- icono SVG inline B&W: monitor -->
+            <span class="card-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="2" y="4" width="28" height="18" rx="2" stroke="#0d0d0d" stroke-width="2.2" fill="none"/>
+                <line x1="12" y1="22" x2="20" y2="22" stroke="#0d0d0d" stroke-width="2.2"/>
+                <line x1="16" y1="22" x2="16" y2="28" stroke="#0d0d0d" stroke-width="2.2"/>
+                <line x1="10" y1="28" x2="22" y2="28" stroke="#0d0d0d" stroke-width="2.2"/>
+              </svg>
+            </span>
             <h3>Desarrollo Web</h3>
-            <p>Creamos sitios web modernos, rápidos y seguros con las tecnologías más actuales del mercado.</p>
-            <!-- TEMA 3: LISTA NO ORDENADA -->
+            <p>Creamos sitios web modernos, rapidos y seguros con las tecnologias mas actuales del mercado.</p>
             <ul>
-              <li>HTML5 — estructura semántica</li>
-              <li>CSS3 — diseño y estilos visuales</li>
+              <li>HTML5 — estructura semantica</li>
+              <li>CSS3 — diseno y estilos visuales</li>
               <li>JavaScript — interactividad y dinamismo</li>
               <li>Git — control de versiones</li>
             </ul>
           </article>
 
           <article class="card reveal reveal-delay-1">
-            <span class="card-icon">&#127775;</span>
+            <!-- icono SVG inline B&W: proceso / lista -->
+            <span class="card-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="7" cy="9" r="2.5" stroke="#0d0d0d" stroke-width="2" fill="none"/>
+                <line x1="12" y1="9" x2="28" y2="9" stroke="#0d0d0d" stroke-width="2.2"/>
+                <circle cx="7" cy="16" r="2.5" stroke="#0d0d0d" stroke-width="2" fill="none"/>
+                <line x1="12" y1="16" x2="28" y2="16" stroke="#0d0d0d" stroke-width="2.2"/>
+                <circle cx="7" cy="23" r="2.5" stroke="#0d0d0d" stroke-width="2" fill="none"/>
+                <line x1="12" y1="23" x2="28" y2="23" stroke="#0d0d0d" stroke-width="2.2"/>
+              </svg>
+            </span>
             <h3>Proceso Creativo</h3>
-            <p>Seguimos una metodología probada para garantizar resultados sobresalientes en cada proyecto.</p>
-            <!-- TEMA 3: LISTA ORDENADA -->
+            <p>Seguimos una metodologia probada para garantizar resultados sobresalientes en cada proyecto.</p>
             <ol>
-              <li>Análisis de requerimientos</li>
-              <li>Diseño de interfaz</li>
-              <li>Desarrollo del código</li>
-              <li>Pruebas y optimización</li>
-              <li>Publicación del sitio</li>
+              <li>Analisis de requerimientos</li>
+              <li>Diseno de interfaz</li>
+              <li>Desarrollo del codigo</li>
+              <li>Pruebas y optimizacion</li>
+              <li>Publicacion del sitio</li>
             </ol>
           </article>
 
           <article class="card reveal reveal-delay-2">
-            <span class="card-icon">&#127775;</span>
-            <h3>Nuestra Misión</h3>
-            <p>
-              Crear productos digitales funcionales, estéticos y eficientes,
-              adaptados a las necesidades reales de cada cliente y empresa.
-            </p>
-            <!-- TEMA 11: float demo dentro de card -->
+            <!-- icono SVG inline B&W: mision / diana -->
+            <span class="card-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="16" cy="16" r="13" stroke="#0d0d0d" stroke-width="2.2" fill="none"/>
+                <circle cx="16" cy="16" r="8" stroke="#0d0d0d" stroke-width="2" fill="none"/>
+                <circle cx="16" cy="16" r="3" fill="#0d0d0d"/>
+              </svg>
+            </span>
+            <h3>Nuestra Mision</h3>
+            <p>Crear productos digitales funcionales, esteticos y eficientes, adaptados a las necesidades reales de cada cliente.</p>
             <div class="float-demo" style="margin-top:1rem;">
-              <span class="float-left" style="width:36px;height:36px;background:var(--black);border-radius:50%;display:block;border:2px solid var(--black);"></span>
+              <span class="float-left" style="width:32px;height:32px;background:var(--black);border-radius:50%;display:block;border:2px solid var(--black);flex-shrink:0;"></span>
               <p style="font-size:0.85rem;color:var(--gray-600);">Comprometidos con la excelencia digital desde 2020, ayudando a empresas a crecer en el mundo online.</p>
             </div>
           </article>
 
           <article class="card reveal reveal-delay-3">
-            <span class="card-icon">&#9881;&#65039;</span>
-            <h3>Tecnologías</h3>
-            <p>Utilizamos el stack tecnológico más robusto y moderno para cada proyecto.</p>
-            <!-- TEMA 3: definición list -->
+            <!-- icono SVG inline B&W: engranaje/stack -->
+            <span class="card-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="4" y="4" width="10" height="10" rx="2" stroke="#0d0d0d" stroke-width="2.2" fill="none"/>
+                <rect x="18" y="4" width="10" height="10" rx="2" stroke="#0d0d0d" stroke-width="2.2" fill="none"/>
+                <rect x="4" y="18" width="10" height="10" rx="2" stroke="#0d0d0d" stroke-width="2.2" fill="none"/>
+                <rect x="18" y="18" width="10" height="10" rx="2" stroke="#0d0d0d" stroke-width="2.2" fill="none"/>
+              </svg>
+            </span>
+            <h3>Tecnologias</h3>
+            <p>Utilizamos el stack tecnologico mas robusto y moderno para cada proyecto.</p>
             <dl style="margin-top:0.75rem;font-size:0.88rem;">
               <dt style="font-weight:700;">Frontend</dt>
               <dd style="color:var(--gray-600);margin-bottom:4px;">HTML5, CSS3, JavaScript ES6+</dd>
@@ -179,90 +180,44 @@
       </div>
     </section>
 
-    <!-- ================================================
-         TEMA 19: COLUMNAS DE TEXTO
-         ================================================ -->
-    <section class="columns-section">
-      <div class="container">
-        <p class="section-label">Quiénes somos</p>
-        <h2 class="section-title reveal">Nuestra Historia</h2>
-        <!-- TEMA 19: column-count -->
-        <div class="columns-intro reveal">
-          <p>
-            <strong>Solución Craft</strong> nació en 2020 con una visión clara: democratizar el acceso a soluciones digitales
-            de calidad para empresas y emprendedores en Colombia y Latinoamérica. Desde nuestros inicios,
-            hemos trabajado con más de 100 clientes de distintos sectores.
-          </p>
-          <p>
-            Nuestro equipo está formado por diseñadores, desarrolladores y estrategas digitales apasionados
-            por la tecnología y el diseño. Creemos que cada proyecto es una oportunidad para crear algo
-            verdaderamente excepcional que marque la diferencia.
-          </p>
-          <p>
-            Trabajamos bajo metodologías ágiles, con comunicación constante y transparente con nuestros
-            clientes. Cada decisión de diseño y desarrollo está fundamentada en datos, tendencias del
-            mercado y las mejores prácticas de la industria.
-          </p>
-          <p>
-            La <strong>innovación continua</strong> es parte de nuestro ADN. Nos mantenemos actualizados con
-            las últimas tecnologías y tendencias del diseño digital para ofrecer siempre soluciones a la
-            vanguardia del mercado.
-          </p>
-          <p>
-            Nuestro compromiso no termina con la entrega del proyecto. Ofrecemos soporte post-lanzamiento,
-            mantenimiento y actualizaciones para asegurar que tu presencia digital evolucione junto con
-            tu negocio y las exigencias del mercado.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================
-         TEMA 9: IMAGEN DE FONDO + TEMA 22: DEGRADADOS
-         ================================================ -->
+    <!-- PARALLAX — TEMA 9, 22 -->
     <div class="parallax-strip">
       <div class="container parallax-content">
         <blockquote>
-          &ldquo;El buen diseño no es solo cómo se ve,<br>es cómo funciona.&rdquo;
+          &ldquo;El buen diseno no es solo como se ve,<br>es como funciona.&rdquo;
         </blockquote>
-        <cite>— Filosofía de Solución Craft</cite>
+        <cite>— Filosofia de Solucion Craft</cite>
       </div>
     </div>
 
-    <!-- ================================================
-         MULTIMEDIA — TEMA 20: VIDEO, TEMA 21: AUDIO,
-         TEMA 17: IFRAME, TEMA 3: IMG/FIGURE
-         ================================================ -->
+    <!-- MULTIMEDIA — TEMA 20, 21, 17, 3 -->
     <section class="multimedia-section">
       <div class="container">
         <p class="section-label">Portafolio &amp; Recursos</p>
         <h2 class="section-title reveal">Nuestro Trabajo</h2>
 
-        <!-- TEMA 3: GALERÍA DE IMÁGENES con figure/figcaption -->
         <h3 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:var(--sp-sm);">Proyectos Recientes</h3>
         <div class="gallery-grid reveal" style="margin-bottom:var(--sp-lg);">
           <figure class="gallery-item">
-            <!-- TEMA 3: picture con srcset responsive -->
             <picture>
-              <source media="(max-width:600px)" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80&grayscale">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Dashboard de análisis web para cliente corporativo" loading="lazy">
+              <source media="(max-width:600px)" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Dashboard de analisis web para cliente corporativo" loading="lazy">
             </picture>
             <div class="gallery-overlay"><span>Dashboard Corporativo</span></div>
-            <figcaption>Dashboard de analítica web — Cliente FinTech</figcaption>
+            <figcaption>Dashboard de analitica web — Cliente FinTech</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Diseño de interfaz de e-commerce moderno" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Diseno de interfaz de e-commerce moderno" loading="lazy">
             <div class="gallery-overlay"><span>E-commerce Moderno</span></div>
             <figcaption>Tienda online — Sector Retail</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80" alt="Aplicación móvil de servicios profesionales" loading="lazy">
-            <div class="gallery-overlay"><span>App Móvil</span></div>
-            <figcaption>Aplicación móvil — Startup de Servicios</figcaption>
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80" alt="Aplicacion movil de servicios profesionales" loading="lazy">
+            <div class="gallery-overlay"><span>App Movil</span></div>
+            <figcaption>Aplicacion movil — Startup de Servicios</figcaption>
           </figure>
         </div>
 
-        <!-- Grid multimedia -->
         <div class="media-grid">
 
           <!-- TEMA 20: VIDEO -->
@@ -272,10 +227,12 @@
               <span>&#9654; Video — Proceso de diseño</span>
             </div>
             <div class="media-body">
-<video controls>
-  <source src="assets/video/mi-video.mp4" type="video/mp4">
+              <video controls>
+                <source src="assets/video/mi-video.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento video.
+              </video>
               <figure style="margin-top:var(--sp-xs);">
-                <figcaption>Cómo construimos interfaces desde cero — proceso completo de diseño y desarrollo web.</figcaption>
+                <figcaption>Como construimos interfaces desde cero — proceso completo de diseno y desarrollo web.</figcaption>
               </figure>
             </div>
           </div>
@@ -284,7 +241,7 @@
           <div class="media-card reveal reveal-delay-1">
             <div class="media-header">
               <span class="dot"></span>
-              <span>&#9834; Audio — Presentación del equipo</span>
+              <span>&#9834; Audio — Presentacion del equipo</span>
             </div>
             <div class="media-body">
               <div class="audio-visual">
@@ -294,33 +251,33 @@
                 </div>
               </div>
               <audio controls>
-  <source src="assets/audio/presentacion.mp3" type="audio/mpeg">
-</audio>
+                <source src="assets/audio/presentacion.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento audio.
+              </audio>
               <figure style="margin-top:var(--sp-xs);">
-                <figcaption>Presentación del equipo y filosofía de trabajo de Solución Craft.</figcaption>
+                <figcaption>Presentacion del equipo y filosofia de trabajo de Solucion Craft.</figcaption>
               </figure>
             </div>
           </div>
 
-          <!-- TEMA 17: IFRAME — video de YouTube sobre diseño web -->
+          <!-- TEMA 17: IFRAME -->
           <div class="media-card reveal reveal-delay-2" style="grid-column:1/-1;">
             <div class="media-header">
               <span class="dot"></span>
-              <span>&#9654; Tutorial — Fundamentos de diseño web moderno</span>
+              <span>&#9654; Tutorial — Fundamentos de diseno web moderno</span>
             </div>
             <div class="media-body">
-              <!-- TEMA 17: iframe responsivo -->
               <div class="iframe-wrapper">
                 <iframe
                   src="https://www.youtube.com/embed/ysEN5RaKOlA"
-                  title="Fundamentos de diseño web moderno — tutorial para desarrolladores"
+                  title="Fundamentos de diseno web moderno — tutorial para desarrolladores"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                   loading="lazy">
                 </iframe>
               </div>
               <figure>
-                <figcaption>Tutorial: Diseño web moderno con HTML5 y CSS3 — técnicas y buenas prácticas profesionales. (Pasa el cursor para ver en color)</figcaption>
+                <figcaption>Tutorial: Diseno web moderno con HTML5 y CSS3 — buenas practicas profesionales. (Hover para ver en color)</figcaption>
               </figure>
             </div>
           </div>
@@ -329,17 +286,30 @@
       </div>
     </section>
 
-    <!-- ================================================
-         TEMA 16: FORMULARIO — Contacto rápido
-         ================================================ -->
+    <!-- COLUMNAS — TEMA 19 -->
+    <section class="columns-section">
+      <div class="container">
+        <p class="section-label">Quienes somos</p>
+        <h2 class="section-title reveal">Nuestra Historia</h2>
+        <div class="columns-intro reveal">
+          <p><strong>Solucion Craft</strong> nacio en 2020 con una vision clara: democratizar el acceso a soluciones digitales de calidad para empresas y emprendedores en Colombia y Latinoamerica. Desde nuestros inicios, hemos trabajado con mas de 100 clientes de distintos sectores.</p>
+          <p>Nuestro equipo esta formado por disenadores, desarrolladores y estrategas digitales apasionados por la tecnologia y el diseno. Creemos que cada proyecto es una oportunidad para crear algo verdaderamente excepcional que marque la diferencia.</p>
+          <p>Trabajamos bajo metodologias agiles, con comunicacion constante y transparente con nuestros clientes. Cada decision de diseno y desarrollo esta fundamentada en datos, tendencias del mercado y las mejores practicas de la industria.</p>
+          <p>La <strong>innovacion continua</strong> es parte de nuestro ADN. Nos mantenemos actualizados con las ultimas tecnologias y tendencias del diseno digital para ofrecer siempre soluciones a la vanguardia del mercado.</p>
+          <p>Nuestro compromiso no termina con la entrega del proyecto. Ofrecemos soporte post-lanzamiento, mantenimiento y actualizaciones para asegurar que tu presencia digital evolucione junto con tu negocio y las exigencias del mercado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO — TEMA 16 -->
     <section class="contact-form-section" id="contacto-rapido">
       <div class="container">
-        <p class="section-label">Contacto rápido</p>
+        <p class="section-label">Contacto rapido</p>
         <div class="form-layout">
 
           <div class="form-info reveal">
-            <h3>¿Tienes un proyecto en mente?</h3>
-            <p>Cuéntanos sobre tu idea y en menos de 24 horas te respondemos con una propuesta personalizada.</p>
+            <h3>Tienes un proyecto en mente?</h3>
+            <p>Cuentanos sobre tu idea y en menos de 24 horas te respondemos con una propuesta personalizada.</p>
             <ul class="form-info-list">
               <li><span class="icon-check">&#10003;</span> Respuesta en menos de 24 horas</li>
               <li><span class="icon-check">&#10003;</span> Primera consulta sin costo</li>
@@ -348,25 +318,22 @@
             </ul>
           </div>
 
-          <!-- TEMA 16: FORMULARIO completo -->
           <form class="contact-form reveal reveal-delay-1" action="#" method="post" novalidate>
             <fieldset>
-              <legend>Información Personal</legend>
-
+              <legend>Informacion Personal</legend>
               <div class="form-row">
                 <div class="form-group">
                   <label for="nombre">Nombre completo</label>
-                  <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez" autocomplete="name">
+                  <input type="text" id="nombre" name="nombre" required placeholder="Juan Perez" autocomplete="name">
                 </div>
                 <div class="form-group">
-                  <label for="email">Correo electrónico</label>
+                  <label for="email">Correo electronico</label>
                   <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" autocomplete="email">
                 </div>
               </div>
-
               <div class="form-row">
                 <div class="form-group">
-                  <label for="telefono">Teléfono</label>
+                  <label for="telefono">Telefono</label>
                   <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" autocomplete="tel">
                 </div>
                 <div class="form-group">
@@ -374,10 +341,9 @@
                   <input type="url" id="sitio-web" name="sitio-web" placeholder="https://ejemplo.com">
                 </div>
               </div>
-
               <div class="form-row">
                 <div class="form-group">
-                  <label for="fecha">Fecha de reunión preferida</label>
+                  <label for="fecha">Fecha de reunion preferida</label>
                   <input type="date" id="fecha" name="fecha">
                 </div>
                 <div class="form-group">
@@ -389,52 +355,45 @@
 
             <fieldset>
               <legend>Detalles del Proyecto</legend>
-
               <div class="form-group">
                 <label for="prioridad">Prioridad del proyecto</label>
                 <select id="prioridad" name="prioridad">
-                  <option value="">— Selecciona una opción —</option>
+                  <option value="">— Selecciona una opcion —</option>
                   <option value="baja">Baja — tengo tiempo para planear</option>
-                  <option value="media" selected>Media — en los próximos 2 meses</option>
-                  <option value="alta">Alta — en las próximas semanas</option>
+                  <option value="media" selected>Media — en los proximos 2 meses</option>
+                  <option value="alta">Alta — en las proximas semanas</option>
                   <option value="urgente">Urgente — lo necesito ya</option>
                 </select>
               </div>
-
               <div class="form-group">
                 <label for="presupuesto">Presupuesto estimado: <span id="presupuesto-valor">$1,000</span></label>
                 <input type="range" id="presupuesto" name="presupuesto" min="100" max="10000" step="100" value="1000">
               </div>
-
               <div class="form-group">
-                <label>Servicios de interés</label>
+                <label>Servicios de interes</label>
                 <div class="check-group">
                   <label class="check-item"><input type="checkbox" name="servicios" value="web"> Desarrollo Web</label>
-                  <label class="check-item"><input type="checkbox" name="servicios" value="diseno"> Diseño Profesional</label>
-                  <label class="check-item"><input type="checkbox" name="servicios" value="seo"> Optimización SEO</label>
+                  <label class="check-item"><input type="checkbox" name="servicios" value="diseno"> Diseno Profesional</label>
+                  <label class="check-item"><input type="checkbox" name="servicios" value="seo"> Optimizacion SEO</label>
                   <label class="check-item"><input type="checkbox" name="servicios" value="marketing"> Marketing Digital</label>
                 </div>
               </div>
-
               <div class="form-group">
                 <label>Tipo de proyecto</label>
                 <div class="radio-group">
                   <label class="radio-item"><input type="radio" name="tipo-proyecto" value="nuevo" checked> Proyecto Nuevo</label>
-                  <label class="radio-item"><input type="radio" name="tipo-proyecto" value="actualizacion"> Actualización</label>
+                  <label class="radio-item"><input type="radio" name="tipo-proyecto" value="actualizacion"> Actualizacion</label>
                   <label class="radio-item"><input type="radio" name="tipo-proyecto" value="mantenimiento"> Mantenimiento</label>
                 </div>
               </div>
-
               <div class="form-group">
-                <label for="mensaje">Descripción del proyecto</label>
-                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto, objetivos y cualquier detalle relevante..."></textarea>
+                <label for="mensaje">Descripcion del proyecto</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuentanos sobre tu proyecto..."></textarea>
               </div>
-
               <div class="form-group">
                 <label for="archivo">Adjuntar brief o referencia (PDF, DOC)</label>
                 <input type="file" id="archivo" name="archivo" accept=".pdf,.doc,.docx,.jpg,.png">
               </div>
-
               <input type="hidden" name="timestamp" id="timestamp" value="">
             </fieldset>
 
@@ -448,163 +407,29 @@
       </div>
     </section>
 
-    <!-- ================================================
-         TEMA 22: DEGRADADOS — Strip CTA
-         ================================================ -->
-    <section class="cta-strip">
-      <div class="container">
-        <h2>¿Listo para crear algo increíble?</h2>
-        <p>Más de 100 empresas ya transformaron su presencia digital con nosotros.</p>
-        <a href="contacto.html" class="hero-cta" style="display:inline-flex;">
-          Habla con nosotros &#8594;
-        </a>
-      </div>
-    </section>
-
-    <!-- ================================================
-         TEMA 24: SVG (GRÁFICOS VECTORIALES)
-         Gráfico de barras SVG que muestra métricas del proyecto
-         ================================================ -->
-    <section class="svg-section">
-      <div class="container">
-        <p class="section-label">Métricas del proyecto</p>
-        <h2 class="section-title reveal">Nuestros Resultados en SVG</h2>
-        <div class="svg-grid reveal">
-          <!-- SVG: gráfico de barras de satisfacción por servicio -->
-          <figure class="svg-card">
-            <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico de satisfacción por servicio">
-              <title>Satisfacción por servicio</title>
-              <!-- Fondo -->
-              <rect width="360" height="220" fill="#f0f0f0" rx="8"/>
-              <!-- Líneas guía -->
-              <line x1="50" y1="20" x2="50" y2="170" stroke="#c4c4c4" stroke-width="1"/>
-              <line x1="50" y1="170" x2="340" y2="170" stroke="#0d0d0d" stroke-width="2"/>
-              <!-- Barra 1: Desarrollo Web 95% -->
-              <rect x="70" y="51" width="48" height="119" fill="#0d0d0d" rx="4">
-                <animate attributeName="height" from="0" to="119" dur="1s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
-                <animate attributeName="y" from="170" to="51" dur="1s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
-              </rect>
-              <text x="94" y="44" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d">95%</text>
-              <text x="94" y="188" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#444">Web</text>
-              <!-- Barra 2: Diseño 92% -->
-              <rect x="148" y="57" width="48" height="113" fill="#444444" rx="4">
-                <animate attributeName="height" from="0" to="113" dur="1s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
-                <animate attributeName="y" from="170" to="57" dur="1s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
-              </rect>
-              <text x="172" y="50" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d">92%</text>
-              <text x="172" y="188" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#444">Diseño</text>
-              <!-- Barra 3: SEO 88% -->
-              <rect x="226" y="66" width="48" height="104" fill="#7a7a7a" rx="4">
-                <animate attributeName="height" from="0" to="104" dur="1s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
-                <animate attributeName="y" from="170" to="66" dur="1s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
-              </rect>
-              <text x="250" y="59" text-anchor="middle" font-size="11" font-family="Space Mono,monospace" fill="#0d0d0d">88%</text>
-              <text x="250" y="188" text-anchor="middle" font-size="9" font-family="Nunito,sans-serif" fill="#444">SEO</text>
-              <!-- Título -->
-              <text x="195" y="210" text-anchor="middle" font-size="10" font-family="Nunito,sans-serif" fill="#7a7a7a">Satisfacción por servicio (%)</text>
-              <!-- Eje Y labels -->
-              <text x="44" y="173" text-anchor="end" font-size="8" font-family="Space Mono,monospace" fill="#7a7a7a">0</text>
-              <text x="44" y="123" text-anchor="end" font-size="8" font-family="Space Mono,monospace" fill="#7a7a7a">50</text>
-              <text x="44" y="73" text-anchor="end" font-size="8" font-family="Space Mono,monospace" fill="#7a7a7a">100</text>
-              <line x1="48" y1="120" x2="340" y2="120" stroke="#dcdcdc" stroke-width="1" stroke-dasharray="4,3"/>
-              <line x1="48" y1="70" x2="340" y2="70" stroke="#dcdcdc" stroke-width="1" stroke-dasharray="4,3"/>
-            </svg>
-            <figcaption>Gráfico SVG animado — satisfacción de clientes por servicio</figcaption>
-          </figure>
-
-          <!-- SVG: logotipo vectorial / icono animado -->
-          <figure class="svg-card">
-            <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Icono animado Solución Craft">
-              <title>Ícono animado de Solución Craft</title>
-              <rect width="360" height="220" fill="#0d0d0d" rx="8"/>
-              <!-- Círculo exterior giratorio -->
-              <circle cx="180" cy="110" r="80" fill="none" stroke="#c4c4c4" stroke-width="2" stroke-dasharray="12,6">
-                <animateTransform attributeName="transform" type="rotate" from="0 180 110" to="360 180 110" dur="12s" repeatCount="indefinite"/>
-              </circle>
-              <!-- Círculo interior pulsante -->
-              <circle cx="180" cy="110" r="55" fill="none" stroke="#7a7a7a" stroke-width="1.5">
-                <animate attributeName="r" values="55;60;55" dur="2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <!-- Centro sólido -->
-              <circle cx="180" cy="110" r="36" fill="#fafafa"/>
-              <!-- Texto SC centrado -->
-              <text x="180" y="118" text-anchor="middle" font-size="22" font-family="Bebas Neue,Impact,sans-serif" fill="#0d0d0d" letter-spacing="2">SC</text>
-              <!-- Puntos cardinales animados -->
-              <circle cx="180" cy="26" r="5" fill="#fafafa">
-                <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" begin="0s"/>
-              </circle>
-              <circle cx="264" cy="110" r="5" fill="#fafafa">
-                <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
-              </circle>
-              <circle cx="180" cy="194" r="5" fill="#fafafa">
-                <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
-              </circle>
-              <circle cx="96" cy="110" r="5" fill="#fafafa">
-                <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" begin="1.2s"/>
-              </circle>
-              <!-- Label -->
-              <text x="180" y="215" text-anchor="middle" font-size="9" font-family="Space Mono,monospace" fill="#7a7a7a">SVG animado — ícono vectorial interactivo</text>
-            </svg>
-            <figcaption>Ícono SVG con animaciones nativas — sin JavaScript, sin imágenes</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================
-         TEMA 25: CANVAS
-         Visualizador de datos CSV con canvas interactivo
-         ================================================ -->
-    <section class="canvas-section">
-      <div class="container">
-        <p class="section-label">Visualizador interactivo de datos</p>
-        <h2 class="section-title reveal">Canvas: Gráfico de Proyectos</h2>
-        <div class="canvas-wrapper reveal">
-          <div class="canvas-controls">
-            <button class="btn-secondary" id="btn-barras">Barras</button>
-            <button class="btn-secondary" id="btn-linea">Línea</button>
-            <button class="btn-secondary" id="btn-limpiar">Limpiar</button>
-          </div>
-          <!-- TEMA 25: elemento canvas -->
-          <canvas id="grafico-canvas" width="900" height="320" aria-label="Gráfico de proyectos por mes">
-            Tu navegador no soporta Canvas.
-          </canvas>
-          <p class="canvas-hint">Haz clic en las barras para ver detalle &bull; Usa los botones para cambiar el tipo de gráfico</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================
-         TEMA 27: CONTENIDO EDITABLE
-         Sección de notas del usuario con contenteditable
-         ================================================ -->
+    <!-- NOTAS EDITABLES — TEMA 27 + 28 -->
     <section class="editable-section">
       <div class="container">
         <p class="section-label">Espacio de trabajo</p>
         <h2 class="section-title reveal">Tu Bloc de Notas</h2>
         <p class="reveal" style="color:var(--gray-600);margin-bottom:var(--sp-md);">
-          Haz clic en cualquier texto para editarlo directamente. Tus notas se guardan automáticamente en el navegador
-          <strong>(Tema 28: Storage)</strong>.
+          Haz clic en cualquier texto para editarlo directamente. Tus notas se guardan automaticamente en el navegador <strong>(Tema 28: Storage)</strong>.
         </p>
         <div class="editable-grid reveal">
-          <!-- TEMA 27: contenteditable -->
-          <div class="editable-card" contenteditable="true" spellcheck="true" id="nota-1"
-               aria-label="Bloc de notas editable 1" data-storage-key="nota-1">
-            <h3 contenteditable="true">📝 Mis ideas de proyecto</h3>
-            <p>Haz clic aquí para editar este texto. Puedes cambiar el título, añadir ideas, borrar contenido... Todo se guarda automáticamente.</p>
+          <div class="editable-card" contenteditable="true" spellcheck="true" id="nota-1" aria-label="Bloc de notas editable 1" data-storage-key="nota-1">
+            <h3 contenteditable="true">[ Mis ideas de proyecto ]</h3>
+            <p>Haz clic aqui para editar este texto. Todo se guarda automaticamente.</p>
             <ul>
               <li>Idea 1: landing page para cliente</li>
               <li>Idea 2: portafolio con animaciones</li>
               <li>Idea 3: dashboard con Canvas</li>
             </ul>
           </div>
-          <div class="editable-card" contenteditable="true" spellcheck="true" id="nota-2"
-               aria-label="Bloc de notas editable 2" data-storage-key="nota-2">
-            <h3 contenteditable="true">🎯 Objetivos del sprint</h3>
-            <p>Este bloque también es editable. Escribe tus objetivos, tareas o cualquier nota relevante para el proyecto.</p>
+          <div class="editable-card" contenteditable="true" spellcheck="true" id="nota-2" aria-label="Bloc de notas editable 2" data-storage-key="nota-2">
+            <h3 contenteditable="true">[ Objetivos del sprint ]</h3>
+            <p>Este bloque tambien es editable. Escribe tus objetivos, tareas o cualquier nota relevante.</p>
             <ol>
-              <li>Terminar el diseño</li>
+              <li>Terminar el diseno</li>
               <li>Subir a GitHub Pages</li>
               <li>Actualizar el README</li>
             </ol>
@@ -618,6 +443,17 @@
       </div>
     </section>
 
+    <!-- CTA STRIP — TEMA 22 -->
+    <section class="cta-strip">
+      <div class="container">
+        <h2>Listo para crear algo increible?</h2>
+        <p>Mas de 100 empresas ya transformaron su presencia digital con nosotros.</p>
+        <a href="contacto.html" class="hero-cta" style="display:inline-flex;">
+          Habla con nosotros &#8594;
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <!-- TEMA 1: footer semántico -->
@@ -625,42 +461,39 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo-footer">Solución Craft</div>
-          <p>Agencia digital especializada en desarrollo web, diseño y estrategia digital. Bogotá, Colombia.</p>
+          <div class="logo-footer">Solucion Craft</div>
+          <p>Agencia digital especializada en desarrollo web, diseno y estrategia digital. Bogota, Colombia.</p>
         </div>
         <div class="footer-col">
-          <h4>Páginas</h4>
-          <!-- TEMA 3: enlaces -->
+          <h4>Paginas</h4>
           <a href="index.html">Inicio</a>
-          <a href="quienes.html">Quiénes Somos</a>
+          <a href="quienes.html">Quienes Somos</a>
           <a href="servicios.html">Servicios</a>
+          <a href="visualizador.html">SVG &amp; Canvas</a>
           <a href="contacto.html">Contacto</a>
         </div>
         <div class="footer-col">
           <h4>Servicios</h4>
           <a href="servicios.html">Desarrollo Web</a>
-          <a href="servicios.html">Diseño Profesional</a>
-          <a href="servicios.html">Optimización Digital</a>
-          <a href="servicios.html">Consultoría SEO</a>
+          <a href="servicios.html">Diseno Profesional</a>
+          <a href="servicios.html">Optimizacion Digital</a>
+          <a href="servicios.html">Consultoria SEO</a>
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
-          <!-- TEMA 3: mailto y tel links -->
           <a href="mailto:contacto@solucioncraft.com">contacto@solucioncraft.com</a>
-          <a href="tel:+573000000000">++57 301 698 6210</a>
+          <a href="tel:+573016986210">+57 301 698 6210</a>
           <a href="#">LinkedIn</a>
           <a href="#">Instagram</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="footer-year">2025</span> Solución Craft — Todos los derechos reservados</p>
-        <p>Hecho con &#9825; en Bogotá, Colombia</p>
+        <p>&copy; <span id="footer-year">2025</span> Solucion Craft — Todos los derechos reservados</p>
+        <p>Hecho con &#9825; en Bogota, Colombia</p>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script src="js/main.js"></script>
-
 </body>
 </html>
